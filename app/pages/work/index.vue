@@ -63,32 +63,32 @@
 <script setup>
 const projects = [
   {
-    slug: 'scalable-fintech-platform',
-    title: 'Scalable Fintech Platform',
-    description: 'Development of a scalable financial platform designed to handle millions of transactions with real-time processing capabilities. Built with a focus on security, reliability, and performance at scale.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    impact: '35% latency reduction, support for millions of users'
+    slug: 'taxymatch',
+    title: 'TaxyMatch',
+    description: 'A specialized ride-sharing application designed for airport and train station transfers across France. I developed the cross-platform mobile client and contributed to the backend logic to ensure seamless matching between travelers and drivers for a reliable travel experience.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Seamless matching between travelers and drivers'
   },
   {
-    slug: 'internal-design-system',
-    title: 'Internal Design System',
-    description: 'Creation of a comprehensive design system that enables multiple development teams to build consistent, accessible, and visually cohesive interfaces. Includes documentation, component library, and design tokens.',
-    tech: ['React', 'Storybook', 'CSS-in-JS', 'TypeScript'],
-    impact: '40% increase in team productivity, improved visual consistency'
+    slug: 'medtochka',
+    title: 'MedTochka (MedPoint)',
+    description: 'A comprehensive patient portal developed for the "ProDoctors" platform. This app allows users to search for medical specialists, manage appointments, and access healthcare information. I was responsible for building the mobile application to provide a smooth and intuitive user experience.',
+    tech: ['Flutter', 'Django', 'PostgreSQL'],
+    impact: 'Easy access to healthcare specialists'
   },
   {
-    slug: 'real-time-analytics-dashboard',
-    title: 'Real-Time Analytics Dashboard',
-    description: 'A real-time dashboard built for instant decision-making. Features live data visualization, customizable metrics, and seamless integration with multiple data sources for product and business intelligence.',
-    tech: ['Next.js', 'WebSockets', 'D3.js', 'Redis'],
-    impact: 'Instant insights for product and business teams'
+    slug: 'rentout',
+    title: 'RentOut',
+    description: 'A versatile property rental platform catering to both short-term and long-term housing needs. I built the mobile front-end with Flutter and integrated it with a Laravel backend, creating a robust marketplace for property owners and seekers to connect efficiently.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Efficient property marketplace'
   },
   {
-    slug: 'e-commerce-microservices-architecture',
-    title: 'E-Commerce Microservices Architecture',
-    description: 'Complete microservices ecosystem for a high-traffic e-commerce platform. Features event-driven architecture, automated scaling, and distributed data management for maximum reliability and performance.',
-    tech: ['Go', 'Kubernetes', 'gRPC', 'MongoDB'],
-    impact: '99.99% uptime, 10x throughput improvement'
+    slug: 'aquarius',
+    title: 'Aquarius (Vodoley)',
+    description: 'An on-demand delivery application specifically for the bottled water market in Yakutsk. The app simplifies the process of ordering and scheduling regular water deliveries. I developed the full-stack solution, from the mobile interface to the order management system on the backend.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Simplified water delivery scheduling'
   }
 ]
 </script>

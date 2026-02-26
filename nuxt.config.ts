@@ -14,16 +14,16 @@ export default defineNuxtConfig({
         '/about',
         '/contact',
         '/styleguide',
-        '/work/scalable-fintech-platform',
-        '/work/internal-design-system',
-        '/work/real-time-analytics-dashboard',
-        '/work/e-commerce-microservices-architecture'
+        '/work/taxymatch',
+        '/work/medtochka',
+        '/work/rentout',
+        '/work/aquarius'
       ]
     }
   },
   app: {
     head: {
-      title: 'Diego Ramirez - Senior Developer',
+      title: 'goodwin - Alex Galitsky - Full-stack Developer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

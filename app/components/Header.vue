@@ -5,7 +5,7 @@
         to="/" 
         class="font-mono text-sm font-medium text-primary hover:opacity-80 transition-opacity"
       >
-        &lt;diego /&gt;
+        &lt;goodwin /&gt;
       </NuxtLink>
       
       <nav class="hidden md:flex items-center gap-8">

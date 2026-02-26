@@ -27,38 +27,58 @@
               {{ tech }}
             </span>
           </div>
-          <div class="p-4 bg-primary/5 border border-primary/20 rounded-lg">
+          <div class="p-4 bg-primary/5 border border-primary/20 rounded-lg mb-6">
             <span class="font-mono text-sm text-primary">
               <span class="text-muted-foreground">//</span> Impact: {{ project.impact }}
             </span>
+          </div>
+          
+          <div class="flex flex-wrap gap-4">
+            <a 
+              v-if="project.links?.appStore"
+              :href="project.links.appStore"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-mono"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="lucide lucide-apple h-4 w-4 mr-2">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.385-2.376-2-.156-3.675 1.09-4.597 1.09zM15.532 3.752c.843-1.012 1.4-2.427 1.245-3.752-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.675 1.338.104 2.715-.675 3.57-1.688z"/>
+              </svg>
+              App Store
+            </a>
+            <a 
+              v-if="project.links?.googlePlay"
+              :href="project.links.googlePlay"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-mono"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="lucide lucide-play h-4 w-4 mr-2">
+                <path d="M5.255 5.702c-.217.11-.367.326-.396.575a.753.753 0 0 0 .003.096v11.714a.75.75 0 0 0 .393.671l10.5 5.25a.75.75 0 0 0 1.092-.671V4.473a.75.75 0 0 0-1.092-.671l-10.5 5.25z"/>
+              </svg>
+              Google Play
+            </a>
           </div>
         </div>
 
         <div class="opacity-0 animate-fade-in-up stagger-2">
           <div class="flex items-center gap-4 py-8">
             <span class="font-mono text-sm text-primary">//</span>
-            <span class="font-mono text-sm text-muted-foreground">Challenges</span>
+            <span class="font-mono text-sm text-muted-foreground">Description</span>
             <div class="flex-1 h-px bg-border"></div>
           </div>
         </div>
 
         <div class="mb-12 opacity-0 animate-fade-in-up stagger-3">
-          <ul class="space-y-3">
-            <li 
-              v-for="(challenge, index) in project.challenges" 
-              :key="index"
-              class="flex items-start gap-3"
-            >
-              <span class="font-mono text-primary mt-1">→</span>
-              <span class="text-muted-foreground">{{ challenge }}</span>
-            </li>
-          </ul>
+          <p class="text-muted-foreground leading-relaxed">
+            {{ project.detailedDescription }}
+          </p>
         </div>
 
         <div class="opacity-0 animate-fade-in-up stagger-3">
           <div class="flex items-center gap-4 py-8">
             <span class="font-mono text-sm text-primary">//</span>
-            <span class="font-mono text-sm text-muted-foreground">Features</span>
+            <span class="font-mono text-sm text-muted-foreground">Key Features</span>
             <div class="flex-1 h-px bg-border"></div>
           </div>
         </div>
@@ -75,30 +95,6 @@
             </li>
           </ul>
         </div>
-
-        <div class="flex flex-wrap gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
-          <button 
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-mono"
-            disabled
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github mr-2 h-4 w-4">
-              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-              <path d="M9 18c-4.51 2-5-2-7-2"></path>
-            </svg>
-            View Code
-          </button>
-          <button 
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-mono"
-            disabled
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link mr-2 h-4 w-4">
-              <path d="M15 3h6v6"></path>
-              <path d="M10 14 21 3"></path>
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            </svg>
-            Live Demo
-          </button>
-        </div>
       </div>
     </section>
   </div>
@@ -108,77 +104,77 @@
 const route = useRoute()
 
 const projectsData = {
-  'scalable-fintech-platform': {
-    title: 'Scalable Fintech Platform',
-    fullDescription: 'Built a comprehensive financial platform from the ground up, focusing on security, reliability, and performance at scale. The system processes millions of transactions daily with sub-second latency, implementing sophisticated fraud detection algorithms and real-time analytics dashboards for stakeholders.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'],
-    impact: '35% latency reduction, support for millions of users',
-    challenges: [
-      'Handling high-volume concurrent transactions without data loss',
-      'Implementing real-time fraud detection with minimal false positives',
-      'Ensuring PCI-DSS compliance across the entire stack',
-      'Scaling horizontally while maintaining data consistency'
-    ],
+  'taxymatch': {
+    title: 'TaxyMatch',
+    fullDescription: 'A specialized ride-sharing application designed for airport and train station transfers across France.',
+    detailedDescription: 'TaxyMatch is a specialized ride-sharing application designed for airport and train station transfers across France. I developed the cross-platform mobile client using Flutter and contributed to the backend logic to ensure seamless matching between travelers and drivers for a reliable travel experience. The app handles real-time ride requests, driver tracking, and secure payment processing.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Seamless matching between travelers and drivers',
     features: [
-      'Real-time transaction processing engine',
-      'Multi-factor authentication system',
-      'Automated fraud detection with ML models',
-      'Comprehensive audit logging and reporting'
-    ]
+      'Real-time ride matching algorithm',
+      'GPS tracking for drivers and passengers',
+      'Secure payment integration',
+      'Multi-language support',
+      'Airport and train station transfer specialization'
+    ],
+    links: {
+      appStore: 'https://apps.apple.com/ru/app/taxymatch-taxi-vtc-partag%C3%A9/id1437408081',
+      googlePlay: 'https://play.google.com/store/apps/details?id=com.TaxyMatch.TaxyMatch2&hl=ru'
+    }
   },
-  'internal-design-system': {
-    title: 'Internal Design System',
-    fullDescription: 'Designed and implemented a comprehensive design system used across multiple product teams. The system includes a complete component library, design tokens, documentation, and tooling to ensure consistency and accessibility across all products.',
-    tech: ['React', 'Storybook', 'CSS-in-JS', 'TypeScript', 'A11y'],
-    impact: '40% increase in team productivity, improved visual consistency',
-    challenges: [
-      'Creating a flexible system that adapts to different product needs',
-      'Ensuring WCAG 2.1 AA compliance across all components',
-      'Migrating existing products to the new system',
-      'Maintaining backward compatibility during rollout'
-    ],
+  'medtochka': {
+    title: 'MedTochka (MedPoint)',
+    fullDescription: 'A comprehensive patient portal developed for the "ProDoctors" platform.',
+    detailedDescription: 'MedTochka is a comprehensive patient portal developed for the "ProDoctors" platform. This app allows users to search for medical specialists, manage appointments, and access healthcare information. I was responsible for building the mobile application to provide a smooth and intuitive user experience. The app integrates with the existing ProDoctors database and provides real-time appointment availability.',
+    tech: ['Flutter', 'Django', 'PostgreSQL'],
+    impact: 'Easy access to healthcare specialists',
     features: [
-      '50+ reusable React components',
-      'Automated accessibility testing',
-      'Comprehensive documentation site',
-      'Figma design library sync'
-    ]
+      'Search and filter medical specialists',
+      'Online appointment booking',
+      'Appointment reminders and notifications',
+      'Medical records access',
+      'Integration with ProDoctors platform'
+    ],
+    links: {
+      appStore: 'https://apps.apple.com/ru/app/%D0%BC%D0%B5%D0%B4%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%BA-%D0%B2%D1%80%D0%B0%D1%87%D1%83/id1591602076',
+      googlePlay: 'https://play.google.com/store/apps/details?id=ru.medtochka&hl=ru'
+    }
   },
-  'real-time-analytics-dashboard': {
-    title: 'Real-Time Analytics Dashboard',
-    fullDescription: 'Developed a real-time analytics platform providing instant insights into product usage, user behavior, and business metrics. The dashboard supports customizable widgets, real-time alerts, and seamless integration with multiple data sources.',
-    tech: ['Next.js', 'WebSockets', 'D3.js', 'Redis', 'ClickHouse'],
-    impact: 'Instant insights for product and business teams',
-    challenges: [
-      'Processing and visualizing millions of events in real-time',
-      'Maintaining sub-second latency for live updates',
-      'Creating flexible, customizable dashboard widgets',
-      'Optimizing data aggregation for performance'
-    ],
+  'rentout': {
+    title: 'RentOut',
+    fullDescription: 'A versatile property rental platform catering to both short-term and long-term housing needs.',
+    detailedDescription: 'RentOut is a versatile property rental platform catering to both short-term and long-term housing needs. I built the mobile front-end with Flutter and integrated it with a Laravel backend, creating a robust marketplace for property owners and seekers to connect efficiently. The platform supports advanced search filters, virtual tours, and secure booking.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Efficient property marketplace',
     features: [
-      'Live data visualization with WebSocket streaming',
-      'Customizable dashboard widgets',
-      'Automated alerting system',
-      'Historical data analysis and comparisons'
-    ]
+      'Advanced property search with filters',
+      'Short-term and long-term rental options',
+      'Virtual property tours',
+      'Secure booking and payment',
+      'Direct messaging between owners and renters'
+    ],
+    links: {
+      appStore: 'https://apps.apple.com/ru/app/rentout-%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/id6670768633',
+      googlePlay: 'https://play.google.com/store/apps/details?id=one.rentout.rentout&hl=ru'
+    }
   },
-  'e-commerce-microservices-architecture': {
-    title: 'E-Commerce Microservices Architecture',
-    fullDescription: 'Architected and implemented a complete microservices ecosystem for a high-traffic e-commerce platform. The system handles inventory management, order processing, payments, and shipping with event-driven architecture and automated scaling.',
-    tech: ['Go', 'Kubernetes', 'gRPC', 'MongoDB', 'Kafka', 'Redis'],
-    impact: '99.99% uptime, 10x throughput improvement',
-    challenges: [
-      'Designing for eventual consistency across services',
-      'Implementing distributed transaction management',
-      'Ensuring data integrity across service boundaries',
-      'Managing service discovery and load balancing'
-    ],
+  'aquarius': {
+    title: 'Aquarius (Vodoley)',
+    fullDescription: 'An on-demand delivery application specifically for the bottled water market in Yakutsk.',
+    detailedDescription: 'Aquarius (Vodoley) is an on-demand delivery application specifically for the bottled water market in Yakutsk. The app simplifies the process of ordering and scheduling regular water deliveries. I developed the full-stack solution, from the mobile interface to the order management system on the backend. The app supports subscription-based deliveries and real-time order tracking.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Simplified water delivery scheduling',
     features: [
-      'Event-driven architecture with Kafka',
-      'Automated horizontal scaling',
-      'Circuit breaker pattern for resilience',
-      'Distributed tracing and monitoring'
-    ]
+      'Easy water ordering interface',
+      'Subscription-based delivery scheduling',
+      'Real-time order tracking',
+      'Multiple payment options',
+      'Delivery history and reorder'
+    ],
+    links: {
+      appStore: 'https://apps.apple.com/ru/app/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B2%D0%BE%D0%B4%D1%8B-%D1%8F%D0%BA%D1%83%D1%82%D1%81%D0%BA/id6753923701',
+      googlePlay: 'https://play.google.com/store/apps/details?id=monster.voda.vodoley&hl=ru'
+    }
   }
 }
 
@@ -192,6 +188,6 @@ if (!project) {
 }
 
 useHead({
-  title: project.title + ' | Diego Ramirez'
+  title: project.title + ' | goodwin - Alex Galitsky'
 })
 </script>

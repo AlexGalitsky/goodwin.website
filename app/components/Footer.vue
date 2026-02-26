@@ -3,9 +3,9 @@
     <div class="container py-8">
       <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
         <p class="font-mono text-sm text-muted-foreground">
-          <span class="text-primary">//</span> © 2026 Diego Ramirez
+          <span class="text-primary">//</span> © 2026 goodwin - Alex Galitsky
         </p>
-        <div class="flex items-center gap-6">
+        <div v-if="isDev" class="flex items-center gap-6">
           <NuxtLink 
             to="/styleguide" 
             class="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -15,7 +15,7 @@
         </div>
         <div class="flex items-center gap-4">
           <a 
-            href="https://github.com/" 
+            href="https://github.com/AlexGalitsky" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="text-muted-foreground hover:text-primary transition-colors"
@@ -27,7 +27,7 @@
             </svg>
           </a>
           <a 
-            href="https://linkedin.com/" 
+            href="https://www.linkedin.com/in/alex-galitsky" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="text-muted-foreground hover:text-primary transition-colors"
@@ -40,7 +40,7 @@
             </svg>
           </a>
           <a 
-            href="mailto:hello@developer.dev" 
+            href="mailto:alex.galitsky.kd@gmail.com" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="text-muted-foreground hover:text-primary transition-colors"
@@ -56,3 +56,7 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+  const isDev = process.env.NODE_ENV === 'development';
+</script>

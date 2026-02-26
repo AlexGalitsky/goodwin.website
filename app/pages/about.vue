@@ -11,8 +11,8 @@
             <div class="mb-8 opacity-0 animate-fade-in-up stagger-1">
               <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-primary/30 transition-all duration-300 hover:border-primary">
                 <img 
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                  alt="Diego Ramirez - Developer" 
+                  src="/images/my-face.jpg" 
+                  alt="Alex Galitsky - Full-stack Developer" 
                   class="w-full h-full object-cover"
                 >
               </div>
@@ -20,7 +20,7 @@
 
             <div class="opacity-0 animate-fade-in-up stagger-1">
               <p class="text-lg text-foreground leading-relaxed">
-                I'm <span class="text-primary font-medium">Diego Ramirez</span>, a developer based in Mexico focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.
+                I'm <span class="text-primary font-medium">Alex Galitsky</span>, a developer based in Krasnodar - Russia,  focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.
               </p>
             </div>
 
@@ -93,10 +93,31 @@
               </h2>
               <div class="flex flex-wrap gap-2">
                 <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  Flutter
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  Dart
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  Laravel
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  PHP
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  .Net core
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
                   TypeScript
                 </span>
                 <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
                   React
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  Vue
+                </span>
+                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
+                  Next.js
                 </span>
                 <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
                   Node.js
@@ -117,7 +138,7 @@
                   Docker
                 </span>
                 <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  AWS
+                  Azure
                 </span>
               </div>
             </div>
@@ -141,6 +162,6 @@
 
 <script setup>
 useHead({
-  title: 'About | Diego Ramirez'
+  title: 'About | goodwin - Alex Galitsky'
 })
 </script>

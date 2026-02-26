@@ -84,7 +84,7 @@
 
             <div class="space-y-6">
               <a 
-                href="https://github.com/" 
+                href="https://github.com/AlexGalitsky" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 class="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
@@ -97,12 +97,12 @@
                 </div>
                 <div>
                   <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">GitHub</p>
-                  <p class="font-mono text-xs text-muted-foreground">@developer</p>
+                  <p class="font-mono text-xs text-muted-foreground">@AlexGalitsky</p>
                 </div>
               </a>
 
               <a 
-                href="https://linkedin.com/" 
+                href="https://www.linkedin.com/in/alex-galitsky" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 class="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
@@ -116,12 +116,12 @@
                 </div>
                 <div>
                   <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">LinkedIn</p>
-                  <p class="font-mono text-xs text-muted-foreground">/in/developer</p>
+                  <p class="font-mono text-xs text-muted-foreground">/in/alex-galitsky</p>
                 </div>
               </a>
 
               <a 
-                href="mailto:hello@developer.dev" 
+                href="mailto:alex.galitsky.kd@gmail.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 class="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
@@ -134,7 +134,7 @@
                 </div>
                 <div>
                   <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">Email</p>
-                  <p class="font-mono text-xs text-muted-foreground">hello@developer.dev</p>
+                  <p class="font-mono text-xs text-muted-foreground">alex.galitsky.kd@gmail.com</p>
                 </div>
               </a>
             </div>
@@ -172,6 +172,6 @@ const handleSubmit = () => {
 }
 
 useHead({
-  title: 'Contact | Diego Ramirez'
+  title: 'Contact | goodwin - Alex Galitsky'
 })
 </script>

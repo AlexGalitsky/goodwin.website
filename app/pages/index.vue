@@ -5,18 +5,21 @@
         <div class="max-w-3xl">
           <span class="inline-flex items-center font-mono text-xs text-primary mb-6">
             <span class="text-muted-foreground">/*</span>
-            <span class="mx-2">Senior Developer</span>
+            <span class="mx-2">Full-stack Developer</span>
             <span class="text-muted-foreground">*/</span>
           </span>
           
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Hi, I'm Diego Ramirez.<br>
-            <span class="text-muted-foreground">I build reliable digital systems</span>
+            Hi, I'm Alex.<br>
+            <span class="text-muted-foreground">Building bridges between the server and the user</span>
             <span class="inline-block w-[3px] h-[1em] bg-primary animate-blink ml-1 align-middle"></span>
           </h1>
           
           <p class="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed opacity-0 animate-fade-in-up stagger-1">
-            A Mexico-based developer focused on building products that scale, perform, and deliver real impact. Working at the intersection of engineering, product, and design to turn complex problems into elegant solutions.
+            I'm a full-stack developer with a passion for mobile development.
+
+For me, code is simply a tool to solve problems.
+I don't just write code; I create solutions that work just as well "under the hood" as they do on the surface.
           </p>
           
           <div class="opacity-0 animate-fade-in-up stagger-2">
@@ -104,32 +107,32 @@
 <script setup>
 const featuredProjects = [
   {
-    slug: 'scalable-fintech-platform',
-    title: 'Scalable Fintech Platform',
-    description: 'Development of a scalable financial platform handling millions of transactions with real-time processing and robust security measures.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    impact: '35% latency reduction, millions of users supported'
+    slug: 'taxymatch',
+    title: 'TaxyMatch',
+    description: 'A specialized ride-sharing application designed for airport and train station transfers across France.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Seamless matching between travelers and drivers'
   },
   {
-    slug: 'internal-design-system',
-    title: 'Internal Design System',
-    description: 'Creation of a robust design system enabling multiple teams to build consistent, accessible interfaces at scale.',
-    tech: ['React', 'Storybook', 'CSS-in-JS'],
-    impact: '40% increase in team productivity'
+    slug: 'medtochka',
+    title: 'MedTochka (MedPoint)',
+    description: 'A comprehensive patient portal developed for the "ProDoctors" platform.',
+    tech: ['Flutter', 'Django', 'PostgreSQL'],
+    impact: 'Easy access to healthcare specialists'
   },
   {
-    slug: 'real-time-analytics-dashboard',
-    title: 'Real-Time Analytics Dashboard',
-    description: 'Real-time dashboard for instant decision-making with live data visualization and customizable metrics.',
-    tech: ['Next.js', 'WebSockets', 'D3.js'],
-    impact: 'Instant insights for product and business teams'
+    slug: 'rentout',
+    title: 'RentOut',
+    description: 'A versatile property rental platform catering to both short-term and long-term housing needs.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Efficient property marketplace'
   },
   {
-    slug: 'e-commerce-microservices-architecture',
-    title: 'E-Commerce Microservices',
-    description: 'Complete microservices ecosystem for high-traffic e-commerce platform with event-driven architecture and automated scaling.',
-    tech: ['Go', 'Kubernetes', 'gRPC', 'MongoDB'],
-    impact: '99.99% uptime, 10x throughput improvement'
+    slug: 'aquarius',
+    title: 'Aquarius (Vodoley)',
+    description: 'An on-demand delivery application specifically for the bottled water market in Yakutsk.',
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: 'Simplified water delivery scheduling'
   }
 ]
 </script>

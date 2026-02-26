@@ -173,6 +173,6 @@
 
 <script setup>
 useHead({
-  title: 'Styleguide | Diego Ramirez'
+  title: 'Styleguide | goodwin - Alex Galitsky'
 })
 </script>
