@@ -54,6 +54,44 @@
         <span class="sr-only">Toggle menu</span>
       </button>
     </div>
+
+    <!-- Mobile menu -->
+    <div v-if="isMenuOpen" class="md:hidden border-t border-border bg-background relative z-40">
+      <nav class="flex flex-col p-4 gap-4">
+        <NuxtLink
+          to="/"
+          class="font-mono text-sm transition-colors hover:text-primary"
+          :class="route.path === '/' ? 'text-primary' : 'text-muted-foreground'"
+          @click="closeMenu"
+        >
+          Home
+        </NuxtLink>
+        <NuxtLink
+          to="/work"
+          class="font-mono text-sm transition-colors hover:text-primary"
+          :class="route.path.startsWith('/work') ? 'text-primary' : 'text-muted-foreground'"
+          @click="closeMenu"
+        >
+          Work
+        </NuxtLink>
+        <NuxtLink
+          to="/about"
+          class="font-mono text-sm transition-colors hover:text-primary"
+          :class="route.path === '/about' ? 'text-primary' : 'text-muted-foreground'"
+          @click="closeMenu"
+        >
+          About
+        </NuxtLink>
+        <NuxtLink
+          to="/contact"
+          class="font-mono text-sm transition-colors hover:text-primary"
+          :class="route.path === '/contact' ? 'text-primary' : 'text-muted-foreground'"
+          @click="closeMenu"
+        >
+          Contact
+        </NuxtLink>
+      </nav>
+    </div>
   </header>
 </template>
 
