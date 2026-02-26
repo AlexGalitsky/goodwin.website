@@ -63,7 +63,7 @@ export default {
         }
       },
       animation: {
-        'fade-in-up': 'fade-in-up 0.5s ease-out',
+        'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
         blink: 'blink 1s step-end infinite'
       }
     }
