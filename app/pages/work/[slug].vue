@@ -78,12 +78,29 @@
         <div class="opacity-0 animate-fade-in-up stagger-3">
           <div class="flex items-center gap-4 py-8">
             <span class="font-mono text-sm text-primary">//</span>
-            <span class="font-mono text-sm text-muted-foreground">Key Features</span>
+            <span class="font-mono text-sm text-muted-foreground">Screenshots</span>
             <div class="flex-1 h-px bg-border"></div>
           </div>
         </div>
 
         <div class="mb-12 opacity-0 animate-fade-in-up stagger-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div 
+              v-for="(screenshot, index) in project.screenshots" 
+              :key="index"
+              class="group relative overflow-hidden rounded-lg border border-border bg-card"
+            >
+              <img 
+                :src="screenshot" 
+                :alt="`${project.title} screenshot ${index + 1}`"
+                class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="opacity-0 animate-fade-in-up stagger-4">
           <ul class="space-y-3">
             <li 
               v-for="(feature, index) in project.features" 
@@ -120,7 +137,16 @@ const projectsData = {
     links: {
       appStore: 'https://apps.apple.com/ru/app/taxymatch-taxi-vtc-partag%C3%A9/id1437408081',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.TaxyMatch.TaxyMatch2&hl=ru'
-    }
+    },
+    screenshots: [
+      '/projects/taxymatch/1.webp',
+      '/projects/taxymatch/2.webp',
+      '/projects/taxymatch/3.webp',
+      '/projects/taxymatch/4.webp',
+      '/projects/taxymatch/5.webp',
+      '/projects/taxymatch/6.webp',
+      '/projects/taxymatch/7.webp'
+    ]
   },
   'medtochka': {
     title: 'MedTochka (MedPoint)',
@@ -138,7 +164,17 @@ const projectsData = {
     links: {
       appStore: 'https://apps.apple.com/ru/app/%D0%BC%D0%B5%D0%B4%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%BA-%D0%B2%D1%80%D0%B0%D1%87%D1%83/id1591602076',
       googlePlay: 'https://play.google.com/store/apps/details?id=ru.medtochka&hl=ru'
-    }
+    },
+    screenshots: [
+      '/projects/medtochka/1.webp',
+      '/projects/medtochka/2.webp',
+      '/projects/medtochka/3.webp',
+      '/projects/medtochka/4.webp',
+      '/projects/medtochka/5.webp',
+      '/projects/medtochka/6.webp',
+      '/projects/medtochka/7.webp',
+      '/projects/medtochka/8.webp'
+    ]
   },
   'rentout': {
     title: 'RentOut',
@@ -156,7 +192,17 @@ const projectsData = {
     links: {
       appStore: 'https://apps.apple.com/ru/app/rentout-%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/id6670768633',
       googlePlay: 'https://play.google.com/store/apps/details?id=one.rentout.rentout&hl=ru'
-    }
+    },
+    screenshots: [
+      '/projects/rentoout/1.webp',
+      '/projects/rentoout/2.webp',
+      '/projects/rentoout/3.webp',
+      '/projects/rentoout/4.webp',
+      '/projects/rentoout/5.webp',
+      '/projects/rentoout/6.webp',
+      '/projects/rentoout/7.webp',
+      '/projects/rentoout/8.webp'
+    ]
   },
   'aquarius': {
     title: 'Aquarius (Vodoley)',
@@ -174,7 +220,13 @@ const projectsData = {
     links: {
       appStore: 'https://apps.apple.com/ru/app/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B2%D0%BE%D0%B4%D1%8B-%D1%8F%D0%BA%D1%83%D1%82%D1%81%D0%BA/id6753923701',
       googlePlay: 'https://play.google.com/store/apps/details?id=monster.voda.vodoley&hl=ru'
-    }
+    },
+    screenshots: [
+      '/projects/vodoley/1.webp',
+      '/projects/vodoley/2.webp',
+      '/projects/vodoley/3.webp',
+      '/projects/vodoley/4.webp'
+    ]
   }
 }
 
