@@ -1,0 +1,137 @@
+{
+  "common": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "styleguide": "Styleguide",
+    "toggleMenu": "Toggle menu",
+    "backToWork": "Back to Work",
+    "description": "Description",
+    "screenshots": "Screenshots",
+    "impact": "Impact",
+    "philosophy": "Philosophy",
+    "skills": "Skills",
+    "stack": "Stack",
+    "experience": "Experience",
+    "projects": "Projects",
+    "featuredWork": "Featured Work",
+    "viewAllProjects": "View all projects",
+    "sendAMessage": "Send a Message",
+    "connect": "Connect",
+    "availability": "Availability",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "yourName": "Your name",
+    "yourEmail": "your{'@'}email.com",
+    "yourMessage": "Tell me about your project...",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "emailLabel": "Email",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "copyright": "© 2026 goodwin - Alex Galitsky"
+  },
+  "home": {
+    "title": "Hi, I'm Alex.",
+    "subtitle": "Building bridges between the server and the user",
+    "role": "Full-stack Developer",
+    "description": "I'm a full-stack developer with a passion for mobile development. For me, code is simply a tool to solve problems. I don't just write code; I create solutions that work just as well \"under the hood\" as they do on the surface.",
+    "viewWork": "View Work"
+  },
+  "about": {
+    "title": "About",
+    "intro": "I'm <span class=\"text-primary font-medium\">Alex Galitsky</span>, a developer based in Krasnodar - Russia, focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.",
+    "paragraph1": "With years of experience in the industry, I've worked on everything from early-stage startups to enterprise-scale systems. My approach combines technical depth with product thinking — always focused on delivering real impact, not just shipping code.",
+    "paragraph2": "I believe in writing code that's maintainable, documented, and built to evolve. Every system I design considers not just the current requirements, but how it will need to change and scale over time.",
+    "philosophy1": "Build for reliability, not just speed",
+    "philosophy2": "Measure impact, not just output",
+    "philosophy3": "Simplify complexity, don't hide it",
+    "philosophy4": "Document decisions, not just code",
+    "skillsList": [
+      "Systems Architecture",
+      "Frontend Engineering",
+      "API Design",
+      "Performance Optimization",
+      "Technical Leadership",
+      "Product Development"
+    ],
+    "experienceList": [
+      "8+ years in software development",
+      "Startups to enterprise scale",
+      "Remote-first since 2018"
+    ]
+  },
+  "work": {
+    "title": "Work",
+    "description": "A selection of projects showcasing systems engineering, product development, and technical problem-solving. Each project represents real challenges solved with measurable impact."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind or want to discuss opportunities? I'm always open to interesting conversations and collaborations.",
+    "currentlyAvailable": "Currently open to new opportunities and freelance projects."
+  },
+  "projects": {
+    "taxymatch": {
+      "title": "TaxyMatch",
+      "fullDescription": "A specialized ride-sharing application designed for airport and train station transfers across France.",
+      "detailedDescription": "TaxyMatch is a specialized ride-sharing application designed for airport and train station transfers across France. I developed the cross-platform mobile client using Flutter and contributed to the backend logic to ensure seamless matching between travelers and drivers for a reliable travel experience. The app handles real-time ride requests, driver tracking, and secure payment processing.",
+      "impact": "Seamless matching between travelers and drivers",
+      "features": [
+        "Real-time ride matching algorithm",
+        "GPS tracking for drivers and passengers",
+        "Secure payment integration",
+        "Multi-language support",
+        "Airport and train station transfer specialization"
+      ]
+    },
+    "medtochka": {
+      "title": "MedTochka (MedPoint)",
+      "fullDescription": "A comprehensive patient portal developed for the \"ProDoctors\" platform.",
+      "detailedDescription": "MedTochka is a comprehensive patient portal developed for the \"ProDoctors\" platform. This app allows users to search for medical specialists, manage appointments, and access healthcare information. I was responsible for building the mobile application to provide a smooth and intuitive user experience. The app integrates with the existing ProDoctors database and provides real-time appointment availability.",
+      "impact": "Easy access to healthcare specialists",
+      "features": [
+        "Search and filter medical specialists",
+        "Online appointment booking",
+        "Appointment reminders and notifications",
+        "Medical records access",
+        "Integration with ProDoctors platform"
+      ]
+    },
+    "rentout": {
+      "title": "RentOut",
+      "fullDescription": "A versatile property rental platform catering to both short-term and long-term housing needs.",
+      "detailedDescription": "RentOut is a versatile property rental platform catering to both short-term and long-term housing needs. I built the mobile front-end with Flutter and integrated it with a Laravel backend, creating a robust marketplace for property owners and seekers to connect efficiently. The platform supports advanced search filters, virtual tours, and secure booking.",
+      "impact": "Efficient property marketplace",
+      "features": [
+        "Advanced property search with filters",
+        "Short-term and long-term rental options",
+        "Virtual property tours",
+        "Secure booking and payment",
+        "Direct messaging between owners and renters"
+      ]
+    },
+    "aquarius": {
+      "title": "Aquarius (Vodoley)",
+      "fullDescription": "An on-demand delivery application specifically for the bottled water market in Yakutsk.",
+      "detailedDescription": "Aquarius (Vodoley) is an on-demand delivery application specifically for the bottled water market in Yakutsk. The app simplifies the process of ordering and scheduling regular water deliveries. I developed the full-stack solution, from the mobile interface to the order management system on the backend. The app supports subscription-based deliveries and real-time order tracking.",
+      "impact": "Simplified water delivery scheduling",
+      "features": [
+        "Easy water ordering interface",
+        "Subscription-based delivery scheduling",
+        "Real-time order tracking",
+        "Multiple payment options",
+        "Delivery history and reorder"
+      ]
+    }
+  },
+  "meta": {
+    "homeTitle": "goodwin - Alex Galitsky - Full-stack Developer",
+    "homeDescription": "Senior Developer focused on building reliable digital systems",
+    "aboutTitle": "About | goodwin - Alex Galitsky",
+    "workTitle": "Work | goodwin - Alex Galitsky",
+    "contactTitle": "Contact | goodwin - Alex Galitsky"
+  }
+}

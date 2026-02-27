@@ -3,59 +3,58 @@
     <section class="py-20">
       <div class="container">
         <div class="max-w-3xl mb-12 opacity-0 animate-fade-in-up">
-          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">About</h1>
+          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">{{ $t('about.title') }}</h1>
         </div>
 
         <div class="grid gap-16 lg:grid-cols-3">
           <div class="lg:col-span-2 space-y-6">
             <div class="mb-8 opacity-0 animate-fade-in-up stagger-1">
               <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-primary/30 transition-all duration-300 hover:border-primary">
-                <img 
-                  src="/images/my-face.jpg" 
-                  alt="Alex Galitsky - Full-stack Developer" 
+                <img
+                  src="/images/my-face.jpg"
+                  alt="Alex Galitsky - Full-stack Developer"
                   class="w-full h-full object-cover"
                 >
               </div>
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-1">
-              <p class="text-lg text-foreground leading-relaxed">
-                I'm <span class="text-primary font-medium">Alex Galitsky</span>, a developer based in Krasnodar - Russia,  focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.
+              <p class="text-lg text-foreground leading-relaxed" v-html="$t('about.intro')">
               </p>
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-2">
               <p class="text-muted-foreground leading-relaxed">
-                With years of experience in the industry, I've worked on everything from early-stage startups to enterprise-scale systems. My approach combines technical depth with product thinking — always focused on delivering real impact, not just shipping code.
+                {{ $t('about.paragraph1') }}
               </p>
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-3">
               <p class="text-muted-foreground leading-relaxed">
-                I believe in writing code that's maintainable, documented, and built to evolve. Every system I design considers not just the current requirements, but how it will need to change and scale over time.
+                {{ $t('about.paragraph2') }}
               </p>
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-4">
               <div class="flex items-center gap-4 py-8">
                 <span class="font-mono text-sm text-primary">//</span>
-                <span class="font-mono text-sm text-muted-foreground">Philosophy</span>
+                <span class="font-mono text-sm text-muted-foreground">{{ $t('common.philosophy') }}</span>
                 <div class="flex-1 h-px bg-border"></div>
               </div>
             </div>
 
             <div class="space-y-4 font-mono text-sm opacity-0 animate-fade-in-up stagger-4">
               <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> Build for reliability, not just speed
+                <span class="text-primary">//</span> {{ $t('about.philosophy1') }}
               </p>
               <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> Measure impact, not just output
+                <span class="text-primary">//</span> {{ $t('about.philosophy2') }}
               </p>
               <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> Simplify complexity, don't hide it
+                <span class="text-primary">//</span> {{ $t('about.philosophy3') }}
               </p>
               <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> Document decisions, not just code
+                <span class="text-primary">//</span> {{ $t('about.philosophy4') }}
               </p>
             </div>
           </div>
@@ -63,33 +62,22 @@
           <div class="space-y-8">
             <div class="opacity-0 animate-fade-in-up stagger-2">
               <h2 class="font-mono text-sm text-primary mb-4">
-                <span class="text-muted-foreground">/*</span> Skills <span class="text-muted-foreground">*/</span>
+                <span class="text-muted-foreground">/*</span> {{ $t('common.skills') }} <span class="text-muted-foreground">*/</span>
               </h2>
               <ul class="space-y-2">
-                <li class="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <span class="text-primary mr-2">→</span>Systems Architecture
-                </li>
-                <li class="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <span class="text-primary mr-2">→</span>Frontend Engineering
-                </li>
-                <li class="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <span class="text-primary mr-2">→</span>API Design
-                </li>
-                <li class="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <span class="text-primary mr-2">→</span>Performance Optimization
-                </li>
-                <li class="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <span class="text-primary mr-2">→</span>Technical Leadership
-                </li>
-                <li class="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  <span class="text-primary mr-2">→</span>Product Development
+                <li
+                  v-for="(skill, index) in $t('about.skillsList')"
+                  :key="index"
+                  class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <span class="text-primary mr-2">→</span>{{ skill }}
                 </li>
               </ul>
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-3">
               <h2 class="font-mono text-sm text-primary mb-4">
-                <span class="text-muted-foreground">/*</span> Stack <span class="text-muted-foreground">*/</span>
+                <span class="text-muted-foreground">/*</span> {{ $t('common.stack') }} <span class="text-muted-foreground">*/</span>
               </h2>
               <div class="flex flex-wrap gap-2">
                 <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
@@ -145,12 +133,12 @@
 
             <div class="opacity-0 animate-fade-in-up stagger-4">
               <h2 class="font-mono text-sm text-primary mb-4">
-                <span class="text-muted-foreground">/*</span> Experience <span class="text-muted-foreground">*/</span>
+                <span class="text-muted-foreground">/*</span> {{ $t('common.experience') }} <span class="text-muted-foreground">*/</span>
               </h2>
               <div class="space-y-3 text-sm text-muted-foreground">
-                <p>8+ years in software development</p>
-                <p>Startups to enterprise scale</p>
-                <p>Remote-first since 2018</p>
+                <p v-for="(exp, index) in $t('about.experienceList')" :key="index">
+                  {{ exp }}
+                </p>
               </div>
             </div>
           </div>
@@ -161,7 +149,9 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'About | goodwin - Alex Galitsky'
+  title: t('meta.aboutTitle')
 })
 </script>

@@ -1,43 +1,55 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
     <div class="container flex h-16 items-center justify-between">
-      <NuxtLink 
-        to="/" 
+      <NuxtLink
+        to="/"
         class="font-mono text-sm font-medium text-primary hover:opacity-80 transition-opacity"
       >
         &lt;goodwin /&gt;
       </NuxtLink>
-      
+
       <nav class="hidden md:flex items-center gap-8">
-        <NuxtLink 
-          to="/" 
+        <NuxtLink
+          to="/"
           class="font-mono text-sm transition-colors hover:text-primary link-underline"
           :class="route.path === '/' ? 'text-primary' : 'text-muted-foreground'"
         >
-          Home
+          {{ $t('common.home') }}
         </NuxtLink>
-        <NuxtLink 
-          to="/work" 
+        <NuxtLink
+          to="/work"
           class="font-mono text-sm transition-colors hover:text-primary link-underline"
           :class="route.path.startsWith('/work') ? 'text-primary' : 'text-muted-foreground'"
         >
-          Work
+          {{ $t('common.work') }}
         </NuxtLink>
-        <NuxtLink 
-          to="/about" 
+        <NuxtLink
+          to="/about"
           class="font-mono text-sm transition-colors hover:text-primary link-underline"
           :class="route.path === '/about' ? 'text-primary' : 'text-muted-foreground'"
         >
-          About
+          {{ $t('common.about') }}
         </NuxtLink>
-        <NuxtLink 
-          to="/contact" 
+        <NuxtLink
+          to="/contact"
           class="font-mono text-sm transition-colors hover:text-primary link-underline"
           :class="route.path === '/contact' ? 'text-primary' : 'text-muted-foreground'"
         >
-          Contact
+          {{ $t('common.contact') }}
         </NuxtLink>
       </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <button
+          @click="toggleLocale"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-mono"
+          type="button"
+          :aria-label="'Switch language'"
+        >
+          <span v-if="locale === 'ru'">EN</span>
+          <span v-else>RU</span>
+        </button>
+      </div>
 
       <button 
         class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden text-foreground"
@@ -64,7 +76,7 @@
           :class="route.path === '/' ? 'text-primary' : 'text-muted-foreground'"
           @click="closeMenu"
         >
-          Home
+          {{ $t('common.home') }}
         </NuxtLink>
         <NuxtLink
           to="/work"
@@ -72,7 +84,7 @@
           :class="route.path.startsWith('/work') ? 'text-primary' : 'text-muted-foreground'"
           @click="closeMenu"
         >
-          Work
+          {{ $t('common.work') }}
         </NuxtLink>
         <NuxtLink
           to="/about"
@@ -80,7 +92,7 @@
           :class="route.path === '/about' ? 'text-primary' : 'text-muted-foreground'"
           @click="closeMenu"
         >
-          About
+          {{ $t('common.about') }}
         </NuxtLink>
         <NuxtLink
           to="/contact"
@@ -88,8 +100,16 @@
           :class="route.path === '/contact' ? 'text-primary' : 'text-muted-foreground'"
           @click="closeMenu"
         >
-          Contact
+          {{ $t('common.contact') }}
         </NuxtLink>
+        <button
+          @click="toggleLocale"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-mono w-full"
+          type="button"
+        >
+          <span v-if="locale === 'ru'">EN</span>
+          <span v-else>RU</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -97,6 +117,7 @@
 
 <script setup>
 const route = useRoute()
+const { locale, setLocale } = useI18n()
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
@@ -105,5 +126,9 @@ const toggleMenu = () => {
 
 const closeMenu = () => {
   isMenuOpen.value = false
+}
+
+const toggleLocale = () => {
+  setLocale(locale.value === 'ru' ? 'en' : 'ru')
 }
 </script>

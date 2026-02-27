@@ -2,9 +2,27 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n'
+  ],
   css: ['~/assets/css/main.css'],
   ssr: true,
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    locales: [
+      { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' },
+      { code: 'ru', name: 'Русский', iso: 'ru-RU', file: 'ru.json' }
+    ],
+    langDir: 'locales/',
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
   nitro: {
     prerender: {
       failOnError: false,
@@ -23,12 +41,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'goodwin - Alex Galitsky - Full-stack Developer',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Senior Developer focused on building reliable digital systems' }
-      ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },

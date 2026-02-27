@@ -3,9 +3,9 @@
     <section class="py-20">
       <div class="container">
         <div class="max-w-2xl mb-12">
-          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Contact</h1>
+          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">{{ $t('contact.title') }}</h1>
           <p class="text-muted-foreground leading-relaxed">
-            Have a project in mind or want to discuss opportunities? I'm always open to interesting conversations and collaborations.
+            {{ $t('contact.description') }}
           </p>
         </div>
 
@@ -13,20 +13,20 @@
           <div>
             <div class="flex items-center gap-4 py-8">
               <span class="font-mono text-sm text-primary">//</span>
-              <span class="font-mono text-sm text-muted-foreground">Send a Message</span>
+              <span class="font-mono text-sm text-muted-foreground">{{ $t('common.sendAMessage') }}</span>
               <div class="flex-1 h-px bg-border"></div>
             </div>
 
             <form class="space-y-6" @submit.prevent="handleSubmit">
               <div class="space-y-2">
                 <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-mono text-sm" for="name">
-                  <span class="text-primary">//</span> Name
+                  <span class="text-primary">//</span> {{ $t('common.name') }}
                 </label>
-                <input 
+                <input
                   class="flex h-10 w-full rounded-md border px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-card border-border font-mono text-sm"
-                  id="name" 
-                  name="name" 
-                  placeholder="Your name" 
+                  id="name"
+                  name="name"
+                  :placeholder="$t('common.yourName')"
                   required
                   v-model="form.name"
                 >
@@ -34,14 +34,14 @@
 
               <div class="space-y-2">
                 <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-mono text-sm" for="email">
-                  <span class="text-primary">//</span> Email
+                  <span class="text-primary">//</span> {{ $t('common.email') }}
                 </label>
-                <input 
+                <input
                   type="email"
                   class="flex h-10 w-full rounded-md border px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-card border-border font-mono text-sm"
-                  id="email" 
-                  name="email" 
-                  placeholder="your@email.com" 
+                  id="email"
+                  name="email"
+                  :placeholder="$t('common.yourEmail')"
                   required
                   v-model="form.email"
                 >
@@ -49,24 +49,24 @@
 
               <div class="space-y-2">
                 <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-mono text-sm" for="message">
-                  <span class="text-primary">//</span> Message
+                  <span class="text-primary">//</span> {{ $t('common.message') }}
                 </label>
-                <textarea 
+                <textarea
                   class="flex min-h-[80px] w-full rounded-md border px-3 py-2 ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-card border-border font-mono text-sm resize-none"
-                  id="message" 
-                  name="message" 
-                  placeholder="Tell me about your project..." 
-                  rows="6" 
+                  id="message"
+                  name="message"
+                  :placeholder="$t('common.yourMessage')"
+                  rows="6"
                   required
                   v-model="form.message"
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 font-mono"
                 type="submit"
               >
-                Send Message
+                {{ $t('common.send') }}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send ml-2 h-4 w-4">
                   <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
                   <path d="m21.854 2.147-10.94 10.939"></path>
@@ -78,15 +78,15 @@
           <div>
             <div class="flex items-center gap-4 py-8">
               <span class="font-mono text-sm text-primary">//</span>
-              <span class="font-mono text-sm text-muted-foreground">Connect</span>
+              <span class="font-mono text-sm text-muted-foreground">{{ $t('common.connect') }}</span>
               <div class="flex-1 h-px bg-border"></div>
             </div>
 
             <div class="space-y-6">
-              <a 
-                href="https://github.com/AlexGalitsky" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/AlexGalitsky"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
               >
                 <div class="flex items-center justify-center w-12 h-12 bg-secondary rounded-lg group-hover:bg-primary/10 transition-colors">
@@ -96,15 +96,15 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">GitHub</p>
+                  <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">{{ $t('common.github') }}</p>
                   <p class="font-mono text-xs text-muted-foreground">@AlexGalitsky</p>
                 </div>
               </a>
 
-              <a 
-                href="https://www.linkedin.com/in/alex-galitsky" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.linkedin.com/in/alex-galitsky"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
               >
                 <div class="flex items-center justify-center w-12 h-12 bg-secondary rounded-lg group-hover:bg-primary/10 transition-colors">
@@ -115,15 +115,15 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">LinkedIn</p>
+                  <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">{{ $t('common.linkedin') }}</p>
                   <p class="font-mono text-xs text-muted-foreground">/in/alex-galitsky</p>
                 </div>
               </a>
 
-              <a 
-                href="mailto:alex.galitsky.kd@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="mailto:alex.galitsky.kd@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
               >
                 <div class="flex items-center justify-center w-12 h-12 bg-secondary rounded-lg group-hover:bg-primary/10 transition-colors">
@@ -133,7 +133,7 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">Email</p>
+                  <p class="font-mono text-sm text-foreground group-hover:text-primary transition-colors">{{ $t('common.emailLabel') }}</p>
                   <p class="font-mono text-xs text-muted-foreground">alex.galitsky.kd@gmail.com</p>
                 </div>
               </a>
@@ -141,10 +141,10 @@
 
             <div class="mt-8 p-4 bg-card border border-border rounded-lg">
               <p class="font-mono text-xs text-muted-foreground mb-2">
-                <span class="text-primary">/*</span> Availability <span class="text-primary">*/</span>
+                <span class="text-primary">/*</span> {{ $t('common.availability') }} <span class="text-primary">*/</span>
               </p>
               <p class="text-sm text-foreground">
-                Currently open to new opportunities and freelance projects.
+                {{ $t('contact.currentlyAvailable') }}
               </p>
             </div>
           </div>
@@ -155,6 +155,8 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 const form = ref({
   name: '',
   email: '',
@@ -163,7 +165,7 @@ const form = ref({
 
 const handleSubmit = () => {
   // TODO: Implement form submission
-  alert('Thank you for your message! (Form submission not implemented yet)')
+  alert(t('contact.thankYou') || 'Thank you for your message! (Form submission not implemented yet)')
   form.value = {
     name: '',
     email: '',
@@ -172,6 +174,6 @@ const handleSubmit = () => {
 }
 
 useHead({
-  title: 'Contact | goodwin - Alex Galitsky'
+  title: t('meta.contactTitle')
 })
 </script>

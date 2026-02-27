@@ -3,14 +3,14 @@
     <div class="container py-8">
       <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
         <p class="font-mono text-sm text-muted-foreground">
-          <span class="text-primary">//</span> © 2026 goodwin - Alex Galitsky
+          <span class="text-primary">//</span> {{ $t('common.copyright') }}
         </p>
         <div v-if="isDev" class="flex items-center gap-6">
-          <NuxtLink 
-            to="/styleguide" 
+          <NuxtLink
+            to="/styleguide"
             class="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
           >
-            Styleguide
+            {{ $t('common.styleguide') }}
           </NuxtLink>
         </div>
         <div class="flex items-center gap-4">

@@ -2,7 +2,7 @@
   <div v-if="project">
     <section class="py-20">
       <div class="container max-w-4xl">
-        <NuxtLink 
+        <NuxtLink
           to="/work"
           class="inline-flex items-center font-mono text-sm text-muted-foreground hover:text-primary transition-colors mb-8 opacity-0 animate-fade-in-up"
         >
@@ -10,7 +10,7 @@
             <path d="m12 19-7-7 7-7"></path>
             <path d="M19 12H5"></path>
           </svg>
-          Back to Work
+          {{ $t('common.backToWork') }}
         </NuxtLink>
 
         <div class="mb-12 opacity-0 animate-fade-in-up stagger-1">
@@ -19,8 +19,8 @@
             {{ project.fullDescription }}
           </p>
           <div class="flex flex-wrap gap-2 mb-6">
-            <span 
-              v-for="tech in project.tech" 
+            <span
+              v-for="tech in project.tech"
               :key="tech"
               class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border"
             >
@@ -29,12 +29,12 @@
           </div>
           <div class="p-4 bg-primary/5 border border-primary/20 rounded-lg mb-6">
             <span class="font-mono text-sm text-primary">
-              <span class="text-muted-foreground">//</span> Impact: {{ project.impact }}
+              <span class="text-muted-foreground">//</span> {{ $t('common.impact') }}: {{ project.impact }}
             </span>
           </div>
-          
+
           <div class="flex flex-wrap gap-4">
-            <a 
+            <a
               v-if="project.links?.appStore"
               :href="project.links.appStore"
               target="_blank"
@@ -44,9 +44,9 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="lucide lucide-apple h-4 w-4 mr-2">
                 <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.385-2.376-2-.156-3.675 1.09-4.597 1.09zM15.532 3.752c.843-1.012 1.4-2.427 1.245-3.752-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.675 1.338.104 2.715-.675 3.57-1.688z"/>
               </svg>
-              App Store
+              {{ $t('common.appStore') }}
             </a>
-            <a 
+            <a
               v-if="project.links?.googlePlay"
               :href="project.links.googlePlay"
               target="_blank"
@@ -56,7 +56,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="lucide lucide-play h-4 w-4 mr-2">
                 <path d="M5.255 5.702c-.217.11-.367.326-.396.575a.753.753 0 0 0 .003.096v11.714a.75.75 0 0 0 .393.671l10.5 5.25a.75.75 0 0 0 1.092-.671V4.473a.75.75 0 0 0-1.092-.671l-10.5 5.25z"/>
               </svg>
-              Google Play
+              {{ $t('common.googlePlay') }}
             </a>
           </div>
         </div>
@@ -64,7 +64,7 @@
         <div class="opacity-0 animate-fade-in-up stagger-2">
           <div class="flex items-center gap-4 py-8">
             <span class="font-mono text-sm text-primary">//</span>
-            <span class="font-mono text-sm text-muted-foreground">Description</span>
+            <span class="font-mono text-sm text-muted-foreground">{{ $t('common.description') }}</span>
             <div class="flex-1 h-px bg-border"></div>
           </div>
         </div>
@@ -78,20 +78,20 @@
         <div class="opacity-0 animate-fade-in-up stagger-3">
           <div class="flex items-center gap-4 py-8">
             <span class="font-mono text-sm text-primary">//</span>
-            <span class="font-mono text-sm text-muted-foreground">Screenshots</span>
+            <span class="font-mono text-sm text-muted-foreground">{{ $t('common.screenshots') }}</span>
             <div class="flex-1 h-px bg-border"></div>
           </div>
         </div>
 
         <div class="mb-12 opacity-0 animate-fade-in-up stagger-4">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div 
-              v-for="(screenshot, index) in project.screenshots" 
+            <div
+              v-for="(screenshot, index) in project.screenshots"
               :key="index"
               class="group relative overflow-hidden rounded-lg border border-border bg-card"
             >
-              <img 
-                :src="screenshot" 
+              <img
+                :src="screenshot"
                 :alt="`${project.title} screenshot ${index + 1}`"
                 class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
@@ -102,8 +102,8 @@
 
         <div class="opacity-0 animate-fade-in-up stagger-4">
           <ul class="space-y-3">
-            <li 
-              v-for="(feature, index) in project.features" 
+            <li
+              v-for="(feature, index) in project.features"
               :key="index"
               class="flex items-start gap-3"
             >
@@ -119,21 +119,16 @@
 
 <script setup>
 const route = useRoute()
+const { t } = useI18n()
 
 const projectsData = {
   'taxymatch': {
-    title: 'TaxyMatch',
-    fullDescription: 'A specialized ride-sharing application designed for airport and train station transfers across France.',
-    detailedDescription: 'TaxyMatch is a specialized ride-sharing application designed for airport and train station transfers across France. I developed the cross-platform mobile client using Flutter and contributed to the backend logic to ensure seamless matching between travelers and drivers for a reliable travel experience. The app handles real-time ride requests, driver tracking, and secure payment processing.',
+    title: t('projects.taxymatch.title'),
+    fullDescription: t('projects.taxymatch.fullDescription'),
+    detailedDescription: t('projects.taxymatch.detailedDescription'),
     tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: 'Seamless matching between travelers and drivers',
-    features: [
-      'Real-time ride matching algorithm',
-      'GPS tracking for drivers and passengers',
-      'Secure payment integration',
-      'Multi-language support',
-      'Airport and train station transfer specialization'
-    ],
+    impact: t('projects.taxymatch.impact'),
+    features: t('projects.taxymatch.features'),
     links: {
       appStore: 'https://apps.apple.com/ru/app/taxymatch-taxi-vtc-partag%C3%A9/id1437408081',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.TaxyMatch.TaxyMatch2&hl=ru'
@@ -149,18 +144,12 @@ const projectsData = {
     ]
   },
   'medtochka': {
-    title: 'MedTochka (MedPoint)',
-    fullDescription: 'A comprehensive patient portal developed for the "ProDoctors" platform.',
-    detailedDescription: 'MedTochka is a comprehensive patient portal developed for the "ProDoctors" platform. This app allows users to search for medical specialists, manage appointments, and access healthcare information. I was responsible for building the mobile application to provide a smooth and intuitive user experience. The app integrates with the existing ProDoctors database and provides real-time appointment availability.',
+    title: t('projects.medtochka.title'),
+    fullDescription: t('projects.medtochka.fullDescription'),
+    detailedDescription: t('projects.medtochka.detailedDescription'),
     tech: ['Flutter', 'Django', 'PostgreSQL'],
-    impact: 'Easy access to healthcare specialists',
-    features: [
-      'Search and filter medical specialists',
-      'Online appointment booking',
-      'Appointment reminders and notifications',
-      'Medical records access',
-      'Integration with ProDoctors platform'
-    ],
+    impact: t('projects.medtochka.impact'),
+    features: t('projects.medtochka.features'),
     links: {
       appStore: 'https://apps.apple.com/ru/app/%D0%BC%D0%B5%D0%B4%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%BA-%D0%B2%D1%80%D0%B0%D1%87%D1%83/id1591602076',
       googlePlay: 'https://play.google.com/store/apps/details?id=ru.medtochka&hl=ru'
@@ -177,18 +166,12 @@ const projectsData = {
     ]
   },
   'rentout': {
-    title: 'RentOut',
-    fullDescription: 'A versatile property rental platform catering to both short-term and long-term housing needs.',
-    detailedDescription: 'RentOut is a versatile property rental platform catering to both short-term and long-term housing needs. I built the mobile front-end with Flutter and integrated it with a Laravel backend, creating a robust marketplace for property owners and seekers to connect efficiently. The platform supports advanced search filters, virtual tours, and secure booking.',
+    title: t('projects.rentout.title'),
+    fullDescription: t('projects.rentout.fullDescription'),
+    detailedDescription: t('projects.rentout.detailedDescription'),
     tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: 'Efficient property marketplace',
-    features: [
-      'Advanced property search with filters',
-      'Short-term and long-term rental options',
-      'Virtual property tours',
-      'Secure booking and payment',
-      'Direct messaging between owners and renters'
-    ],
+    impact: t('projects.rentout.impact'),
+    features: t('projects.rentout.features'),
     links: {
       appStore: 'https://apps.apple.com/ru/app/rentout-%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/id6670768633',
       googlePlay: 'https://play.google.com/store/apps/details?id=one.rentout.rentout&hl=ru'
@@ -205,18 +188,12 @@ const projectsData = {
     ]
   },
   'aquarius': {
-    title: 'Aquarius (Vodoley)',
-    fullDescription: 'An on-demand delivery application specifically for the bottled water market in Yakutsk.',
-    detailedDescription: 'Aquarius (Vodoley) is an on-demand delivery application specifically for the bottled water market in Yakutsk. The app simplifies the process of ordering and scheduling regular water deliveries. I developed the full-stack solution, from the mobile interface to the order management system on the backend. The app supports subscription-based deliveries and real-time order tracking.',
+    title: t('projects.aquarius.title'),
+    fullDescription: t('projects.aquarius.fullDescription'),
+    detailedDescription: t('projects.aquarius.detailedDescription'),
     tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: 'Simplified water delivery scheduling',
-    features: [
-      'Easy water ordering interface',
-      'Subscription-based delivery scheduling',
-      'Real-time order tracking',
-      'Multiple payment options',
-      'Delivery history and reorder'
-    ],
+    impact: t('projects.aquarius.impact'),
+    features: t('projects.aquarius.features'),
     links: {
       appStore: 'https://apps.apple.com/ru/app/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B2%D0%BE%D0%B4%D1%8B-%D1%8F%D0%BA%D1%83%D1%82%D1%81%D0%BA/id6753923701',
       googlePlay: 'https://play.google.com/store/apps/details?id=monster.voda.vodoley&hl=ru'
