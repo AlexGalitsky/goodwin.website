@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   ssr: true,
   i18n: {
-    vueI18n: './i18n.config.ts',
+    baseUrl: 'https://goodwin.website',
+    vueI18n: './app/i18n.config.ts',
     locales: [
       { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' },
       { code: 'ru', name: 'Русский', iso: 'ru-RU', file: 'ru.json' }

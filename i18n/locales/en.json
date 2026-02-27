@@ -43,7 +43,7 @@
   },
   "about": {
     "title": "About",
-    "intro": "I'm <span class=\"text-primary font-medium\">Alex Galitsky</span>, a developer based in Krasnodar - Russia, focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.",
+    "intro": "I'm {name}, a developer based in Krasnodar - Russia, focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.",
     "paragraph1": "With years of experience in the industry, I've worked on everything from early-stage startups to enterprise-scale systems. My approach combines technical depth with product thinking — always focused on delivering real impact, not just shipping code.",
     "paragraph2": "I believe in writing code that's maintainable, documented, and built to evolve. Every system I design considers not just the current requirements, but how it will need to change and scale over time.",
     "philosophy1": "Build for reliability, not just speed",

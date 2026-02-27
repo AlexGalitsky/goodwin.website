@@ -108,7 +108,7 @@
               class="flex items-start gap-3"
             >
               <span class="font-mono text-primary mt-1">✓</span>
-              <span class="text-muted-foreground">{{ feature }}</span>
+              <span class="text-muted-foreground">{{ rt(feature) }}</span>
             </li>
           </ul>
         </div>
@@ -118,96 +118,101 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 const route = useRoute()
-const { t } = useI18n()
+const { t, tm, rt, locale } = useI18n()
 
-const projectsData = {
-  'taxymatch': {
-    title: t('projects.taxymatch.title'),
-    fullDescription: t('projects.taxymatch.fullDescription'),
-    detailedDescription: t('projects.taxymatch.detailedDescription'),
-    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: t('projects.taxymatch.impact'),
-    features: t('projects.taxymatch.features'),
-    links: {
-      appStore: 'https://apps.apple.com/ru/app/taxymatch-taxi-vtc-partag%C3%A9/id1437408081',
-      googlePlay: 'https://play.google.com/store/apps/details?id=com.TaxyMatch.TaxyMatch2&hl=ru'
+const projectsData = computed(() => {
+  const currentLocale = locale.value 
+
+  return {
+    'taxymatch': {
+      title: t('projects.taxymatch.title'),
+      fullDescription: t('projects.taxymatch.fullDescription'),
+      detailedDescription: t('projects.taxymatch.detailedDescription'),
+      tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+      impact: t('projects.taxymatch.impact'),
+      features: tm('projects.taxymatch.features'),
+      links: {
+        appStore: 'https://apps.apple.com/ru/app/taxymatch-taxi-vtc-partag%C3%A9/id1437408081',
+        googlePlay: 'https://play.google.com/store/apps/details?id=com.TaxyMatch.TaxyMatch2&hl=ru'
+      },
+      screenshots: [
+        '/projects/taxymatch/1.webp',
+        '/projects/taxymatch/2.webp',
+        '/projects/taxymatch/3.webp',
+        '/projects/taxymatch/4.webp',
+        '/projects/taxymatch/5.webp',
+        '/projects/taxymatch/6.webp',
+        '/projects/taxymatch/7.webp'
+      ]
     },
-    screenshots: [
-      '/projects/taxymatch/1.webp',
-      '/projects/taxymatch/2.webp',
-      '/projects/taxymatch/3.webp',
-      '/projects/taxymatch/4.webp',
-      '/projects/taxymatch/5.webp',
-      '/projects/taxymatch/6.webp',
-      '/projects/taxymatch/7.webp'
-    ]
-  },
-  'medtochka': {
-    title: t('projects.medtochka.title'),
-    fullDescription: t('projects.medtochka.fullDescription'),
-    detailedDescription: t('projects.medtochka.detailedDescription'),
-    tech: ['Flutter', 'Django', 'PostgreSQL'],
-    impact: t('projects.medtochka.impact'),
-    features: t('projects.medtochka.features'),
-    links: {
-      appStore: 'https://apps.apple.com/ru/app/%D0%BC%D0%B5%D0%B4%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%BA-%D0%B2%D1%80%D0%B0%D1%87%D1%83/id1591602076',
-      googlePlay: 'https://play.google.com/store/apps/details?id=ru.medtochka&hl=ru'
+    'medtochka': {
+      title: t('projects.medtochka.title'),
+      fullDescription: t('projects.medtochka.fullDescription'),
+      detailedDescription: t('projects.medtochka.detailedDescription'),
+      tech: ['Flutter', 'Django', 'PostgreSQL'],
+      impact: t('projects.medtochka.impact'),
+      features: tm('projects.medtochka.features'),
+      links: {
+        appStore: 'https://apps.apple.com/ru/app/%D0%BC%D0%B5%D0%B4%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%BA-%D0%B2%D1%80%D0%B0%D1%87%D1%83/id1591602076',
+        googlePlay: 'https://play.google.com/store/apps/details?id=ru.medtochka&hl=ru'
+      },
+      screenshots: [
+        '/projects/medtochka/1.webp',
+        '/projects/medtochka/2.webp',
+        '/projects/medtochka/3.webp',
+        '/projects/medtochka/4.webp',
+        '/projects/medtochka/5.webp',
+        '/projects/medtochka/6.webp',
+        '/projects/medtochka/7.webp',
+        '/projects/medtochka/8.webp'
+      ]
     },
-    screenshots: [
-      '/projects/medtochka/1.webp',
-      '/projects/medtochka/2.webp',
-      '/projects/medtochka/3.webp',
-      '/projects/medtochka/4.webp',
-      '/projects/medtochka/5.webp',
-      '/projects/medtochka/6.webp',
-      '/projects/medtochka/7.webp',
-      '/projects/medtochka/8.webp'
-    ]
-  },
-  'rentout': {
-    title: t('projects.rentout.title'),
-    fullDescription: t('projects.rentout.fullDescription'),
-    detailedDescription: t('projects.rentout.detailedDescription'),
-    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: t('projects.rentout.impact'),
-    features: t('projects.rentout.features'),
-    links: {
-      appStore: 'https://apps.apple.com/ru/app/rentout-%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/id6670768633',
-      googlePlay: 'https://play.google.com/store/apps/details?id=one.rentout.rentout&hl=ru'
+    'rentout': {
+      title: t('projects.rentout.title'),
+      fullDescription: t('projects.rentout.fullDescription'),
+      detailedDescription: t('projects.rentout.detailedDescription'),
+      tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+      impact: t('projects.rentout.impact'),
+      features: tm('projects.rentout.features'),
+      links: {
+        appStore: 'https://apps.apple.com/ru/app/rentout-%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/id6670768633',
+        googlePlay: 'https://play.google.com/store/apps/details?id=one.rentout.rentout&hl=ru'
+      },
+      screenshots: [
+        '/projects/rentoout/1.webp',
+        '/projects/rentoout/2.webp',
+        '/projects/rentoout/3.webp',
+        '/projects/rentoout/4.webp',
+        '/projects/rentoout/5.webp',
+        '/projects/rentoout/6.webp',
+        '/projects/rentoout/7.webp',
+        '/projects/rentoout/8.webp'
+      ]
     },
-    screenshots: [
-      '/projects/rentoout/1.webp',
-      '/projects/rentoout/2.webp',
-      '/projects/rentoout/3.webp',
-      '/projects/rentoout/4.webp',
-      '/projects/rentoout/5.webp',
-      '/projects/rentoout/6.webp',
-      '/projects/rentoout/7.webp',
-      '/projects/rentoout/8.webp'
-    ]
-  },
-  'aquarius': {
-    title: t('projects.aquarius.title'),
-    fullDescription: t('projects.aquarius.fullDescription'),
-    detailedDescription: t('projects.aquarius.detailedDescription'),
-    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: t('projects.aquarius.impact'),
-    features: t('projects.aquarius.features'),
-    links: {
-      appStore: 'https://apps.apple.com/ru/app/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B2%D0%BE%D0%B4%D1%8B-%D1%8F%D0%BA%D1%83%D1%82%D1%81%D0%BA/id6753923701',
-      googlePlay: 'https://play.google.com/store/apps/details?id=monster.voda.vodoley&hl=ru'
-    },
-    screenshots: [
-      '/projects/vodoley/1.webp',
-      '/projects/vodoley/2.webp',
-      '/projects/vodoley/3.webp',
-      '/projects/vodoley/4.webp'
-    ]
+    'aquarius': {
+      title: t('projects.aquarius.title'),
+      fullDescription: t('projects.aquarius.fullDescription'),
+      detailedDescription: t('projects.aquarius.detailedDescription'),
+      tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+      impact: t('projects.aquarius.impact'),
+      features: tm('projects.aquarius.features'),
+      links: {
+        appStore: 'https://apps.apple.com/ru/app/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B2%D0%BE%D0%B4%D1%8B-%D1%8F%D0%BA%D1%83%D1%82%D1%81%D0%BA/id6753923701',
+        googlePlay: 'https://play.google.com/store/apps/details?id=monster.voda.vodoley&hl=ru'
+      },
+      screenshots: [
+        '/projects/vodoley/1.webp',
+        '/projects/vodoley/2.webp',
+        '/projects/vodoley/3.webp',
+        '/projects/vodoley/4.webp'
+      ]
+    }
   }
-}
+})
 
-const project = projectsData[route.params.slug]
+const project = computed(() => projectsData.value[route.params.slug])
 
 if (!project) {
   throw createError({
@@ -217,6 +222,21 @@ if (!project) {
 }
 
 useHead({
-  title: project.title + ' | goodwin - Alex Galitsky'
+  title: project.value?.title + ' | goodwin - Alex Galitsky | Developer'
+})
+
+useSeoMeta({
+  title: () => project.value?.title || ' | goodwin - Alex Galitsky | Developer',
+  description: () => project.value?.fullDescription,
+  ogTitle: () => project.value?.title,
+  ogDescription: () => project.value?.fullDescription,
+  ogType: 'website',
+  // ogImage: () => project.value?.image 
+})
+
+useHead({
+  htmlAttrs: {
+    lang: () => locale.value
+  }
 })
 </script>

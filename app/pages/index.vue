@@ -102,9 +102,11 @@
 </template>
 
 <script setup>
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
-const featuredProjects = [
+const featuredProjects = computed(() => {
+  const currentLocale = locale.value 
+  return [
   {
     slug: 'taxymatch',
     title: 'TaxyMatch',
@@ -133,5 +135,5 @@ const featuredProjects = [
     tech: ['Flutter', 'Laravel', 'PostgreSQL'],
     impact: t('projects.aquarius.impact')
   }
-]
+]})
 </script>

@@ -19,8 +19,11 @@
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-1">
-              <p class="text-lg text-foreground leading-relaxed" v-html="$t('about.intro')">
-              </p>
+              <i18n-t keypath="about.intro" tag="p" class="text-lg text-foreground leading-relaxed">
+                <template #name>
+                  <span class="text-primary font-medium">Alex Galitsky</span>
+                </template>
+              </i18n-t>
             </div>
 
             <div class="opacity-0 animate-fade-in-up stagger-2">
@@ -66,11 +69,11 @@
               </h2>
               <ul class="space-y-2">
                 <li
-                  v-for="(skill, index) in $t('about.skillsList')"
+                  v-for="(skill, index) in $tm('about.skillsList')"
                   :key="index"
                   class="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <span class="text-primary mr-2">→</span>{{ skill }}
+                  <span class="text-primary mr-2">→</span>{{ rt(skill) }}
                 </li>
               </ul>
             </div>
@@ -136,8 +139,8 @@
                 <span class="text-muted-foreground">/*</span> {{ $t('common.experience') }} <span class="text-muted-foreground">*/</span>
               </h2>
               <div class="space-y-3 text-sm text-muted-foreground">
-                <p v-for="(exp, index) in $t('about.experienceList')" :key="index">
-                  {{ exp }}
+                <p v-for="(exp, index) in $tm('about.experienceList')" :key="index">
+                  {{ rt(exp) }}
                 </p>
               </div>
             </div>
@@ -149,7 +152,7 @@
 </template>
 
 <script setup>
-const { t } = useI18n()
+const { t, rt } = useI18n()
 
 useHead({
   title: t('meta.aboutTitle')
