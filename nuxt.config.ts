@@ -32,6 +32,7 @@ export default defineNuxtConfig({
         '/work',
         '/about',
         '/contact',
+        '/curriculum-vitae',
         '/styleguide',
         '/work/taxymatch',
         '/work/medtochka',
