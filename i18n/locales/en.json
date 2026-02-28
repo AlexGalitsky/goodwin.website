@@ -148,6 +148,9 @@
         "mhtml": "MHTML"
       }
     },
+    "print": {
+      "label": "Print CV"
+    },
     "contactInfo": {
       "location": "Krasnodar, Russia",
       "citizenship": "Russia, work permit available",

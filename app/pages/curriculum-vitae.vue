@@ -8,36 +8,52 @@
             <h1 class="text-3xl md:text-4xl font-bold text-foreground">
               {{ $t('resume.title') }}
             </h1>
-            <div class="relative">
+            <div class="flex items-center gap-2">
               <button
-                @click="downloadMenuOpen = !downloadMenuOpen"
-                class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-secondary hover:bg-secondary/80 rounded-md border border-border transition-colors"
+                @click="handlePrint"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-secondary hover:bg-secondary/80 rounded-md border border-border transition-colors print:hidden"
+                :aria-label="$t('resume.print.label')"
               >
-                <span>{{ $t('resume.download.label') }}</span>
                 <svg
-                  :class="['w-4 h-4 transition-transform', downloadMenuOpen ? 'rotate-180' : '']"
+                  class="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                 </svg>
               </button>
-              <div
-                v-if="downloadMenuOpen"
-                class="absolute right-0 mt-2 w-48 rounded-md border bg-background text-popover-foreground shadow-lg z-10"
-              >
-                <div class="py-1">
-                  <a
-                    v-for="format in cvFormats"
-                    :key="format.ext"
-                    :href="format.href"
-                    download
-                    class="block px-4 py-2 text-sm hover:bg-accent"
-                    @click="downloadMenuOpen = false"
+              <div class="relative">
+                <button
+                  @click="downloadMenuOpen = !downloadMenuOpen"
+                  class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-secondary hover:bg-secondary/80 rounded-md border border-border transition-colors print:hidden"
+                >
+                  <span>{{ $t('resume.download.label') }}</span>
+                  <svg
+                    :class="['w-4 h-4 transition-transform', downloadMenuOpen ? 'rotate-180' : '']"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    {{ format.label }}
-                  </a>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  v-if="downloadMenuOpen"
+                  class="absolute right-0 mt-2 w-48 rounded-md border bg-background text-foreground shadow-lg z-10"
+                >
+                  <div class="py-1">
+                    <a
+                      v-for="format in cvFormats"
+                      :key="format.ext"
+                      :href="format.href"
+                      download
+                      class="block px-4 py-2 text-sm hover:bg-accent"
+                      @click="downloadMenuOpen = false"
+                    >
+                      {{ format.label }}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -590,7 +606,84 @@ const cvFormats = computed(() => [
   { ext: 'mhtml', href: '/cv/cv_alex_galitsky.mhtml', label: t('resume.download.formats.mhtml') },
 ])
 
+const handlePrint = () => {
+  window.print()
+}
+
+onMounted(() => {
+  const handleKeyDown = (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+      e.preventDefault()
+      window.print()
+    }
+  }
+  window.addEventListener('keydown', handleKeyDown)
+  onUnmounted(() => {
+    window.removeEventListener('keydown', handleKeyDown)
+  })
+})
+
 useHead({
   title: t('meta.resumeTitle')
 })
 </script>
+
+<style>
+@media print {
+  body {
+    background: white !important;
+  }
+  
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  /* Hide elements */
+  header,
+  footer,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Remove shadows and borders */
+  .rounded-lg,
+  .shadow-sm {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Ensure white backgrounds */
+  .bg-card,
+  .bg-secondary,
+  .bg-popover,
+  .bg-accent {
+    background: white !important;
+  }
+  
+  /* Text colors for print */
+  .text-muted-foreground,
+  .text-primary,
+  .text-card-foreground,
+  .text-popover-foreground {
+    color: black !important;
+  }
+  
+  /* Remove decorative elements */
+  .border-primary\/50 {
+    border-color: #e5e7eb !important;
+  }
+  
+  /* Page breaks */
+  .mb-16 {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Ensure links are visible */
+  a {
+    color: black !important;
+    text-decoration: none;
+  }
+}
+</style>
