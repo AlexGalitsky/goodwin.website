@@ -139,6 +139,15 @@
   "resume": {
     "title": "Резюме",
     "subtitle": "Flutter разработчик & Full-stack инженер",
+    "download": {
+      "label": "Скачать резюме",
+      "formats": {
+        "pdf": "PDF",
+        "doc": "DOC",
+        "rtf": "RTF",
+        "mhtml": "MHTML"
+      }
+    },
     "contactInfo": {
       "location": "Краснодар",
       "citizenship": "Россия, есть разрешение на работу: Россия",

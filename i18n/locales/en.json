@@ -139,6 +139,15 @@
   "resume": {
     "title": "Resume",
     "subtitle": "Flutter Developer & Full-stack Engineer",
+    "download": {
+      "label": "Download CV",
+      "formats": {
+        "pdf": "PDF",
+        "doc": "DOC",
+        "rtf": "RTF",
+        "mhtml": "MHTML"
+      }
+    },
     "contactInfo": {
       "location": "Krasnodar, Russia",
       "citizenship": "Russia, work permit available",

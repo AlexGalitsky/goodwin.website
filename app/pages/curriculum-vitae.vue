@@ -3,10 +3,45 @@
     <section class="py-20">
       <div class="container">
         <!-- Header -->
-        <div class="max-w-2xl mb-12">
-          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {{ $t('resume.title') }}
-          </h1>
+        <div class="max-w-1xl mb-12">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-foreground">
+              {{ $t('resume.title') }}
+            </h1>
+            <div class="relative">
+              <button
+                @click="downloadMenuOpen = !downloadMenuOpen"
+                class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-secondary hover:bg-secondary/80 rounded-md border border-border transition-colors"
+              >
+                <span>{{ $t('resume.download.label') }}</span>
+                <svg
+                  :class="['w-4 h-4 transition-transform', downloadMenuOpen ? 'rotate-180' : '']"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                v-if="downloadMenuOpen"
+                class="absolute right-0 mt-2 w-48 rounded-md border bg-background text-popover-foreground shadow-lg z-10"
+              >
+                <div class="py-1">
+                  <a
+                    v-for="format in cvFormats"
+                    :key="format.ext"
+                    :href="format.href"
+                    download
+                    class="block px-4 py-2 text-sm hover:bg-accent"
+                    @click="downloadMenuOpen = false"
+                  >
+                    {{ format.label }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <p class="text-muted-foreground leading-relaxed">
             {{ $t('resume.subtitle') }}
           </p>
@@ -545,6 +580,15 @@
 
 <script setup>
 const { t, tm, rt, locale } = useI18n()
+
+const downloadMenuOpen = ref(false)
+
+const cvFormats = computed(() => [
+  { ext: 'pdf', href: '/cv/cv_alex_galitsky.pdf', label: t('resume.download.formats.pdf') },
+  { ext: 'doc', href: '/cv/cv_alex_galitsky.doc', label: t('resume.download.formats.doc') },
+  { ext: 'rtf', href: '/cv/cv_alex_galitsky.rtf', label: t('resume.download.formats.rtf') },
+  { ext: 'mhtml', href: '/cv/cv_alex_galitsky.mhtml', label: t('resume.download.formats.mhtml') },
+])
 
 useHead({
   title: t('meta.resumeTitle')
