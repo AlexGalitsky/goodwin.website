@@ -94,6 +94,14 @@
           {{ $t('common.work') }}
         </NuxtLink>
         <NuxtLink
+          to="/curriculum-vitae"
+          class="font-mono text-sm transition-colors hover:text-primary"
+          :class="route.path === '/curriculum-vitae' ? 'text-primary' : 'text-muted-foreground'"
+          @click="closeMenu"
+        >
+          {{ $t('common.curriculumVitae') }}
+        </NuxtLink>
+        <NuxtLink
           to="/about"
           class="font-mono text-sm transition-colors hover:text-primary"
           :class="route.path === '/about' ? 'text-primary' : 'text-muted-foreground'"
