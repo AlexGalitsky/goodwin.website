@@ -1,3 +1,5 @@
+import { minify } from 'html-minifier-terser'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -6,6 +8,31 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n'
   ],
+  vite: {
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      }
+    }
+  },
+  hooks: {
+    'nitro:init': (nitro) => {
+      nitro.hooks.hook('prerender:generate', async (route) => {
+        if (route.fileName?.endsWith('.html') && route.contents) {
+          route.contents = await minify(route.contents, {
+            collapseWhitespace: true,
+            removeComments: true,
+            minifyCSS: true,
+            minifyJS: true
+          })
+        }
+      })
+    }
+  },
   css: ['~/assets/css/main.css'],
   ssr: true,
   i18n: {
