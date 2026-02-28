@@ -2,6 +2,7 @@
   "common": {
     "home": "Home",
     "work": "Work",
+    "curriculumVitae": "CV",
     "about": "About",
     "contact": "Contact",
     "styleguide": "Styleguide",
@@ -132,6 +133,233 @@
     "homeDescription": "Full-stack Developer focused on building reliable digital systems",
     "aboutTitle": "About | goodwin - Alex Galitsky",
     "workTitle": "Work | goodwin - Alex Galitsky",
-    "contactTitle": "Contact | goodwin - Alex Galitsky"
+    "contactTitle": "Contact | goodwin - Alex Galitsky",
+    "resumeTitle": "Resume | goodwin - Alex Galitsky"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Flutter Developer & Full-stack Engineer",
+    "contactInfo": {
+      "location": "Krasnodar, Russia",
+      "citizenship": "Russia, work permit available",
+      "relocation": "Open to relocation: Moscow, rare business trips",
+      "phone": "+7 (928) 2336631",
+      "phoneNote": "preferred contact method",
+      "email": "alex.galitsky.kd{'@'}gmail.com",
+      "telegram": "{'@'}goodwin_dot_website"
+    },
+    "desiredPosition": {
+      "title": "Desired Position and Salary",
+      "position": "Flutter developer",
+      "specialization": "Programmer, Developer",
+      "employmentType": "Full-time, Part-time, Project/Freelance",
+      "workFormat": "On-site",
+      "travelTime": "No preference"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "total": "15 years 1 month",
+      "rentout": {
+        "company": "RentOut Technologies",
+        "location": "Yakutsk, rentout.one",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": ["Internet company (search engines, payment systems, social networks, informational and entertainment resources, website promotion, etc.)", "Software Development"],
+        "period": "December 2023 — Present (2 years 3 months)",
+        "position": "Fullstack Developer",
+        "achievements": [
+          "Managed a team of 6, created and launched a product (server-side and mobile application)",
+          "Created a product development roadmap (technical part)",
+          "Equipped the project with modern solutions for further development"
+        ],
+        "responsibilities": [
+          "Architecture planning",
+          "Server-side development and maintenance",
+          "Mobile application development",
+          "DevOps and CI/CD",
+          "Technical documentation",
+          "Technology stack selection for the project",
+          "Team formation",
+          "Code review",
+          "Developer selection and oversight",
+          "Development process optimization",
+          "Knowledge sharing among team members",
+          "Brainstorming",
+          "Reporting to the client on project stages and issues encountered"
+        ]
+      },
+      "medtochka": {
+        "company": "ProDoctorov - MedTochka",
+        "location": "Krasnodar, prodoctorov.ru/",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": ["Internet company (search engines, payment systems, social networks, informational and entertainment resources, website promotion, etc.)"],
+        "period": "November 2022 — October 2023 (1 year)",
+        "position": "Flutter Developer",
+        "achievements": [
+          "Implemented local database in mobile application",
+          "Developed telemedicine services module",
+          "Integrated automated tests, improving product quality"
+        ],
+        "responsibilities": [
+          "Mobile development for Android/iOS using Flutter/Dart",
+          "Technical documentation",
+          "Technology stack selection for the project",
+          "Architecture development",
+          "Code review",
+          "Development process optimization",
+          "Knowledge sharing among team members",
+          "Brainstorming"
+        ],
+        "note": "Application successfully launched and available on App Store and Google Play"
+      },
+      "m101": {
+        "company": "M101",
+        "location": "France, m101.fr/",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": ["Software Development", "System Integration, Business Process Automation, IT Consulting"],
+        "period": "July 2020 — October 2021 (1 year 4 months)",
+        "position": "Fullstack Developer",
+        "achievements": [
+          "Migrated from React Native to Flutter",
+          "Updated server-side dependencies to latest versions",
+          "Implemented new transfer type from train stations (previously only airports)"
+        ],
+        "responsibilities": [
+          "Mobile development for Android/iOS using Flutter/Dart",
+          "Technical documentation",
+          "Technology stack selection for the project",
+          "Team formation",
+          "Architecture development",
+          "Code review",
+          "Developer selection and oversight",
+          "Development process optimization",
+          "Production server deployment",
+          "Knowledge sharing among team members",
+          "Brainstorming",
+          "Reporting to the client on project stages and issues encountered"
+        ],
+        "note": "Application available on App Store and Google Play"
+      },
+      "anthill": {
+        "company": "Anthill",
+        "location": "Sochi, anthill-it.com/",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": ["System Integration, Business Process Automation, IT Consulting"],
+        "period": "October 2019 — June 2020 (9 months)",
+        "position": "Fullstack .Net Developer",
+        "achievements": ["Completed several client projects to production launch"],
+        "responsibilities": [
+          "Project development and support, outsourcing (React.js, .Net Core, MongoDB)",
+          "Microservices development and support: Node.js, MS Azure",
+          "Server-side of WhatsApp communication automation platform in Hong Kong (https://www.wati.io/)"
+        ]
+      },
+      "independent": {
+        "company": "Independent Developer",
+        "location": "Yakutsk",
+        "period": "June 2016 — September 2019 (3 years 4 months)",
+        "position": "Programmer",
+        "responsibilities": [
+          "Website development and support: PHP, .Net Core, MySQL, MSSQL",
+          "Medical Information System development for private clinic (Registration, Medical Records, Appointment Lists, Warehouse, Reports, integration with cash registers Sberbank Atom, terminal Sberbank, integration with medical analyzers via HL7): ObjectPascal/RadStudio, .Net Core, MSSQL"
+        ]
+      },
+      "sakhamedstrakh": {
+        "company": "JSC SMC Sahamedstrakh",
+        "location": "Yakutsk, sakhamedstrakh.ru/",
+        "period": "October 2011 — May 2016 (4 years 8 months)",
+        "position": "Programmer",
+        "achievements": [
+          "Developed 1C configuration for DMS from scratch with insurance reserve calculations and implemented at the enterprise",
+          "Automated and optimized medical registry loading, eliminating manual entry"
+        ],
+        "responsibilities": [
+          "Software development and support for company needs:",
+          "Medical Information System (ObjectPascal, Rad Studio, MSSQL)",
+          "1C Enterprise (Accounting, Insurance Company Management)",
+          "Operator ARM (.Net WinForms, MSSQL)",
+          "Queue Management System (.Net Core, MSSQL)",
+          "Various microservices (Node.js, PHP, .Net Core)",
+          "Windows Server 2012 administration (AD, GPO, VPN, DHCP, DNS, FileStorage, Hyper-V) and MS SQL 2012 DBMS"
+        ]
+      },
+      "meduza": {
+        "company": "Meduza Casino",
+        "location": "Yakutsk",
+        "industry": "Consumer Services",
+        "subIndustry": ["Gaming Business"],
+        "period": "January 2010 — September 2011 (1 year 9 months)",
+        "position": "Technician-Programmer",
+        "responsibilities": ["Online casino development"]
+      }
+    },
+    "education": {
+      "title": "Education",
+      "level": "Secondary Specialized",
+      "university": {
+        "name": "North-Eastern Federal University named after M.K. Ammosov, Yakutsk",
+        "year": "2012",
+        "specialty": "Software and Information Systems Developer, Software for Computer Technology and Automated Systems"
+      }
+    },
+    "certifications": {
+      "title": "Professional Development, Courses",
+      "specialist": {
+        "name": "Training Center \"Specialist\" at Bauman Moscow State Technical University",
+        "year": "2014",
+        "description": "JSC SMC Sahamedstrakh, 1C Developer"
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "languages": {
+        "label": "Language Proficiency",
+        "russian": "Russian — Native",
+        "english": "English — B1 — Intermediate"
+      },
+      "technical": {
+        "label": "Technical Skills",
+        "items": ["Git", "SQL", "Linux", "Flutter", "Mobile Dev", "MS Azure", "BLoC", "go_router", "Hive", "SQLite", "Firebase", "Docker", "Gitlab", "Maps (Google, OSM)", "Stripe", "Dart", "AI", "LLM", "Laravel", "TypeScript", "Nest.js", "GraphQL", "HTML5", "CSS3", "JavaScript", "PHP", "REST API", "WebSocket", "ASP.NET", "Team Leading"]
+      }
+    },
+    "about": {
+      "title": "Additional Information",
+      "contacts": {
+        "telegram": "Telegram - {'@'}goodwin_dot_website",
+        "website": "https://goodwin.website/",
+        "email": "alex.galitsky.kd{'@'}gmail.com",
+        "note": "Please contact via Telegram or email"
+      },
+      "summary": "Was a Fullstack .Net developer, but always wanted to work in mobile development. Have experience developing backend for mobile applications and of course experience in mobile application development on Flutter. Interested in microcontroller programming and robotics. If there's an opportunity to assemble a device independently, I will definitely try to implement it with my own hands (for example, 3D printer or scanner). Recently interested in computer vision and neural networks. Quickly learn new technologies and frameworks when needed. For fun, developed a queue management system (software stack: .Net core, Node.js, MSSQL, ObjectPascal; hardware stack: OrangePi microcomputer, Atmega328 microcontroller). Still works in 4 organizations. Enjoy developing software-hardware complexes, such systems as employee time tracking at enterprises or smart home systems. Unfortunately, these are just hobbies for now. If there's a \"gadget\" that can be connected via COM port or \"solder a couple of wires\", I will definitely connect to it, even if it's a medical analyzer worth millions of rubles. Love soldering as a hobby.",
+      "achievements": [
+        "Successful product launches available on international platforms App Store and Google Play",
+        "Experience managing full application development lifecycle, from concept to release",
+        "Creating unique solutions for process automation in various industries, including medical technologies and logistics"
+      ],
+      "competencies": [
+        "Technologies: Full-stack proficiency for mobile applications and server solutions: .NET, Node.js, PHP/Laravel, Flutter",
+        "Mobile Development: Cross-platform mobile application development for iOS and Android",
+        "Backend Development: Server solutions, REST API, integration with external services and databases",
+        "Project Management: Team collaboration, coordinating all stages from development to application release, managing timelines and quality",
+        "Business Solutions: Developing solutions that solve specific business problems, including process automation, UX/UI improvement, integration with various systems and business process optimization"
+      ]
+    },
+    "recommendations": {
+      "title": "Recommendations",
+      "taxyMatch": {
+        "company": "TaxyMatch",
+        "name": "Jean-Edern Rougagnou",
+        "position": "Chief Executive Officer (CEO)"
+      },
+      "wati": {
+        "company": "WATI",
+        "name": "Ken Yeung",
+        "position": "Chief Executive Officer (CEO)"
+      },
+      "rentout": {
+        "company": "RentOut Technologies LLC",
+        "name": "Fedor Abramov",
+        "position": "Chief Executive Officer (CEO)"
+      }
+    }
   }
 }
