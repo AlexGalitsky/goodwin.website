@@ -12,7 +12,7 @@
               <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-primary/30 transition-all duration-300 hover:border-primary">
                 <img
                   src="/images/my-face.jpg"
-                  alt="Alex Galitsky - Full-stack Developer"
+                  alt="Alex Galitsky — Tech Lead"
                   class="w-full h-full object-cover"
                 >
               </div>
@@ -35,29 +35,6 @@
             <div class="opacity-0 animate-fade-in-up stagger-3">
               <p class="text-muted-foreground leading-relaxed">
                 {{ $t('about.paragraph2') }}
-              </p>
-            </div>
-
-            <div class="opacity-0 animate-fade-in-up stagger-4">
-              <div class="flex items-center gap-4 py-8">
-                <span class="font-mono text-sm text-primary">//</span>
-                <span class="font-mono text-sm text-muted-foreground">{{ $t('common.philosophy') }}</span>
-                <div class="flex-1 h-px bg-border"></div>
-              </div>
-            </div>
-
-            <div class="space-y-4 font-mono text-sm opacity-0 animate-fade-in-up stagger-4">
-              <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> {{ $t('about.philosophy1') }}
-              </p>
-              <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> {{ $t('about.philosophy2') }}
-              </p>
-              <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> {{ $t('about.philosophy3') }}
-              </p>
-              <p class="text-muted-foreground transition-colors hover:text-foreground">
-                <span class="text-primary">//</span> {{ $t('about.philosophy4') }}
               </p>
             </div>
           </div>
@@ -83,53 +60,12 @@
                 <span class="text-muted-foreground">/*</span> {{ $t('common.stack') }} <span class="text-muted-foreground">*/</span>
               </h2>
               <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Flutter
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Dart
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Laravel
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  PHP
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  .Net core
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  TypeScript
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  React
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Vue
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Next.js
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Node.js
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  PostgreSQL
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Next.js
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  GraphQL
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Redis
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Docker
-                </span>
-                <span class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border">
-                  Azure
+                <span
+                  v-for="tech in stack"
+                  :key="tech"
+                  class="inline-flex items-center px-2 py-1 font-mono text-xs text-muted-foreground bg-secondary rounded-sm border border-border"
+                >
+                  {{ tech }}
                 </span>
               </div>
             </div>
@@ -152,7 +88,12 @@
 </template>
 
 <script setup>
-const { t, rt } = useI18n()
+const { t, tm, rt } = useI18n()
+
+const stack = [
+  'Flutter', 'Dart', 'BLoC', 'Laravel', 'NestJS', 'Node.js',
+  'PostgreSQL', 'Docker', 'CI/CD', 'Linux', 'Firebase'
+]
 
 useHead({
   title: t('meta.aboutTitle')

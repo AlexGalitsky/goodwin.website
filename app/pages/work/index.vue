@@ -23,18 +23,19 @@
             :key="project.slug"
             :to="`/work/${project.slug}`"
             class="opacity-0 animate-fade-in-up"
-            :class="`stagger-${index + 2}`"
+            :class="`stagger-${Math.min(index + 2, 5)}`"
           >
             <article class="group p-6 bg-card border border-border rounded-lg transition-all hover:border-primary/50 hover:bg-card/80 cursor-pointer hover-lift">
               <div class="flex items-center justify-between mb-2">
                 <h3 class="font-mono text-lg font-medium text-foreground group-hover:text-primary transition-colors">
                   {{ project.title }}
                 </h3>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
               </div>
+              <p class="font-mono text-xs text-primary mb-3">{{ project.role }}</p>
               <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {{ project.description }}
               </p>
@@ -61,41 +62,37 @@
 </template>
 
 <script setup>
-const { t, locale } = useI18n()
+const { t } = useI18n()
 
-  const projects = computed(() => {
-  const currentLocale = locale.value 
-  return [{
-    slug: 'taxymatch',
-    title: 'TaxyMatch',
-    description: t('projects.taxymatch.fullDescription'),
-    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: t('projects.taxymatch.impact')
-  },
-  {
-    slug: 'medtochka',
-    title: t('projects.medtochka.title'),
-    description: t('projects.medtochka.fullDescription'),
-    tech: ['Flutter', 'Django', 'PostgreSQL'],
-    impact: t('projects.medtochka.impact')
-  },
+const projects = computed(() => [
   {
     slug: 'rentout',
     title: t('projects.rentout.title'),
+    role: t('projects.rentout.role'),
     description: t('projects.rentout.fullDescription'),
     tech: ['Flutter', 'Laravel', 'PostgreSQL'],
     impact: t('projects.rentout.impact')
   },
   {
-    slug: 'aquarius',
-    title: t('projects.aquarius.title'),
-    description: t('projects.aquarius.fullDescription'),
+    slug: 'medtochka',
+    title: t('projects.medtochka.title'),
+    role: t('projects.medtochka.role'),
+    description: t('projects.medtochka.fullDescription'),
+    tech: ['Flutter', 'CI/CD'],
+    impact: t('projects.medtochka.impact')
+  },
+  {
+    slug: 'taxymatch',
+    title: t('projects.taxymatch.title'),
+    role: t('projects.taxymatch.role'),
+    description: t('projects.taxymatch.fullDescription'),
     tech: ['Flutter', 'Laravel', 'PostgreSQL'],
-    impact: t('projects.aquarius.impact')
+    impact: t('projects.taxymatch.impact')
   },
   {
     slug: 'virtueforge',
     title: t('projects.virtueforge.title'),
+    role: t('projects.virtueforge.role'),
     description: t('projects.virtueforge.fullDescription'),
     tech: ['Flutter', 'NestJS', 'PostgreSQL'],
     impact: t('projects.virtueforge.impact')
@@ -103,9 +100,22 @@ const { t, locale } = useI18n()
   {
     slug: 'vpn',
     title: t('projects.vpn.title'),
+    role: t('projects.vpn.role'),
     description: t('projects.vpn.fullDescription'),
     tech: ['Flutter', 'Xray', 'Hysteria'],
     impact: t('projects.vpn.impact')
+  },
+  {
+    slug: 'aquarius',
+    title: t('projects.aquarius.title'),
+    role: t('projects.aquarius.role'),
+    description: t('projects.aquarius.fullDescription'),
+    tech: ['Flutter', 'Laravel', 'PostgreSQL'],
+    impact: t('projects.aquarius.impact')
   }
-]})
+])
+
+useHead({
+  title: t('meta.workTitle')
+})
 </script>

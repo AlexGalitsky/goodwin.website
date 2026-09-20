@@ -2,15 +2,9 @@
 
 Personal portfolio and CV of **Alex Galitsky** — [goodwin.website](https://goodwin.website).
 
+**Tech Lead · Flutter & Full-stack**
+
 Nuxt 4 · Vue 3 · Tailwind · i18n (EN / RU).
-
-## Layout
-
-| Path | Role |
-|------|------|
-| `app/` | Pages, components, assets |
-| `public/` | Static files (CV, images, robots) |
-| `i18n/` | Locale JSON |
 
 ## Quick start
 
@@ -27,6 +21,8 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Production Nitro build |
 | `npm run generate` | Static prerender |
 | `npm run preview` | Preview production build |
+
+ATS CV downloads: `/cv/Alex_Galitsky_TechLead_CV_{RU|EN}.{pdf,docx}`
 
 ## License
 

@@ -14,7 +14,8 @@
         </NuxtLink>
 
         <div class="mb-12 opacity-0 animate-fade-in-up stagger-1">
-          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">{{ project.title }}</h1>
+          <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-2">{{ project.title }}</h1>
+          <p class="font-mono text-sm text-primary mb-4">{{ project.role }}</p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
             {{ project.fullDescription }}
           </p>
@@ -83,10 +84,23 @@
           </div>
         </div>
 
-        <div class="mb-12 opacity-0 animate-fade-in-up stagger-3">
+        <div class="mb-8 opacity-0 animate-fade-in-up stagger-3">
           <p class="text-muted-foreground leading-relaxed">
             {{ project.detailedDescription }}
           </p>
+        </div>
+
+        <div class="mb-12 opacity-0 animate-fade-in-up stagger-3">
+          <p class="font-mono text-xs text-primary mb-3">/* {{ $t('common.outcomes') }} */</p>
+          <ul class="space-y-2">
+            <li
+              v-for="(item, index) in project.features"
+              :key="index"
+              class="text-sm text-muted-foreground"
+            >
+              <span class="text-primary mr-2">→</span>{{ typeof item === 'string' ? item : rt(item) }}
+            </li>
+          </ul>
         </div>
 
         <div class="opacity-0 animate-fade-in-up stagger-3">
@@ -142,6 +156,7 @@ const projectsData = computed(() => {
   return {
     'taxymatch': {
       title: t('projects.taxymatch.title'),
+      role: t('projects.taxymatch.role'),
       fullDescription: t('projects.taxymatch.fullDescription'),
       detailedDescription: t('projects.taxymatch.detailedDescription'),
       tech: ['Flutter', 'Laravel', 'PostgreSQL'],
@@ -163,9 +178,10 @@ const projectsData = computed(() => {
     },
     'medtochka': {
       title: t('projects.medtochka.title'),
+      role: t('projects.medtochka.role'),
       fullDescription: t('projects.medtochka.fullDescription'),
       detailedDescription: t('projects.medtochka.detailedDescription'),
-      tech: ['Flutter', 'Django', 'PostgreSQL'],
+      tech: ['Flutter', 'CI/CD'],
       impact: t('projects.medtochka.impact'),
       features: tm('projects.medtochka.features'),
       links: {
@@ -185,6 +201,7 @@ const projectsData = computed(() => {
     },
     'rentout': {
       title: t('projects.rentout.title'),
+      role: t('projects.rentout.role'),
       fullDescription: t('projects.rentout.fullDescription'),
       detailedDescription: t('projects.rentout.detailedDescription'),
       tech: ['Flutter', 'Laravel', 'PostgreSQL'],
@@ -207,6 +224,7 @@ const projectsData = computed(() => {
     },
     'aquarius': {
       title: t('projects.aquarius.title'),
+      role: t('projects.aquarius.role'),
       fullDescription: t('projects.aquarius.fullDescription'),
       detailedDescription: t('projects.aquarius.detailedDescription'),
       tech: ['Flutter', 'Laravel', 'PostgreSQL'],
@@ -225,6 +243,7 @@ const projectsData = computed(() => {
     },
     'virtueforge': {
       title: t('projects.virtueforge.title'),
+      role: t('projects.virtueforge.role'),
       fullDescription: t('projects.virtueforge.fullDescription'),
       detailedDescription: t('projects.virtueforge.detailedDescription'),
       tech: ['Flutter', 'NestJS', 'PostgreSQL'],
@@ -243,6 +262,7 @@ const projectsData = computed(() => {
     },
     'vpn': {
       title: t('projects.vpn.title'),
+      role: t('projects.vpn.role'),
       fullDescription: t('projects.vpn.fullDescription'),
       detailedDescription: t('projects.vpn.detailedDescription'),
       tech: ['Flutter', 'Xray', 'Hysteria'],
@@ -262,29 +282,18 @@ const projectsData = computed(() => {
 
 const project = computed(() => projectsData.value[route.params.slug])
 
-if (!project) {
+if (!project.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Project Not Found'
   })
 }
 
-useHead({
-  title: project.value?.title + ' | goodwin - Alex Galitsky | Developer'
-})
-
 useSeoMeta({
-  title: () => project.value?.title || ' | goodwin - Alex Galitsky | Developer',
+  title: () => `${project.value?.title || 'Work'} | goodwin`,
   description: () => project.value?.fullDescription,
   ogTitle: () => project.value?.title,
   ogDescription: () => project.value?.fullDescription,
-  ogType: 'website',
-  // ogImage: () => project.value?.image 
-})
-
-useHead({
-  htmlAttrs: {
-    lang: () => locale.value
-  }
+  ogType: 'website'
 })
 </script>
