@@ -1,0 +1,451 @@
+{
+  "common": {
+    "home": "Home",
+    "work": "Work",
+    "curriculumVitae": "CV",
+    "about": "About",
+    "contact": "Contact",
+    "styleguide": "Styleguide",
+    "toggleMenu": "Toggle menu",
+    "backToWork": "Back to Work",
+    "description": "Description",
+    "screenshots": "Screenshots",
+    "impact": "Impact",
+    "philosophy": "Philosophy",
+    "skills": "Skills",
+    "stack": "Stack",
+    "experience": "Experience",
+    "projects": "Projects",
+    "featuredWork": "Featured Work",
+    "viewAllProjects": "View all projects",
+    "sendAMessage": "Send a Message",
+    "connect": "Connect",
+    "availability": "Availability",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "yourName": "Your name",
+    "yourEmail": "your{'@'}email.com",
+    "yourMessage": "Tell me about your project...",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "emailLabel": "Email",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "copyright": "© 2026 goodwin - Alex Galitsky",
+    "website": "Website"
+  },
+  "home": {
+    "title": "Hi, I'm Alex.",
+    "subtitle": "Building bridges between the server and the user",
+    "role": "Full-stack Developer",
+    "description": "I'm a full-stack developer with a passion for mobile development. For me, code is simply a tool to solve problems. I don't just write code; I create solutions that work just as well \"under the hood\" as they do on the surface.",
+    "viewWork": "View Work"
+  },
+  "about": {
+    "title": "About",
+    "intro": "I'm {name}, a developer based in Krasnodar - Russia, focused on building systems that scale, perform, and last. I work at the intersection of engineering, product, and design, turning complex problems into reliable digital solutions.",
+    "paragraph1": "With years of experience in the industry, I've worked on everything from early-stage startups to enterprise-scale systems. My approach combines technical depth with product thinking — always focused on delivering real impact, not just shipping code.",
+    "paragraph2": "I believe in writing code that's maintainable, documented, and built to evolve. Every system I design considers not just the current requirements, but how it will need to change and scale over time.",
+    "philosophy1": "Build for reliability, not just speed",
+    "philosophy2": "Measure impact, not just output",
+    "philosophy3": "Simplify complexity, don't hide it",
+    "philosophy4": "Document decisions, not just code",
+    "skillsList": [
+      "Systems Architecture",
+      "Frontend Engineering",
+      "API Design",
+      "Performance Optimization",
+      "Technical Leadership",
+      "Product Development"
+    ],
+    "experienceList": [
+      "8+ years in software development",
+      "Startups to enterprise scale",
+      "Remote-first since 2018"
+    ]
+  },
+  "work": {
+    "title": "Work",
+    "description": "A selection of projects showcasing systems engineering, product development, and technical problem-solving. Each project represents real challenges solved with measurable impact."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind or want to discuss opportunities? I'm always open to interesting conversations and collaborations.",
+    "currentlyAvailable": "Currently open to new opportunities and freelance projects."
+  },
+  "projects": {
+    "taxymatch": {
+      "title": "TaxyMatch",
+      "fullDescription": "A specialized ride-sharing application designed for airport and train station transfers across France.",
+      "detailedDescription": "TaxyMatch is a specialized ride-sharing application designed for airport and train station transfers across France. I developed the cross-platform mobile client using Flutter and contributed to the backend logic to ensure seamless matching between travelers and drivers for a reliable travel experience. The app handles real-time ride requests, driver tracking, and secure payment processing.",
+      "impact": "Seamless matching between travelers and drivers",
+      "features": [
+        "Real-time ride matching algorithm",
+        "GPS tracking for drivers and passengers",
+        "Secure payment integration",
+        "Multi-language support",
+        "Airport and train station transfer specialization"
+      ]
+    },
+    "medtochka": {
+      "title": "MedTochka (MedPoint)",
+      "fullDescription": "A comprehensive patient portal developed for the \"ProDoctors\" platform.",
+      "detailedDescription": "MedTochka is a comprehensive patient portal developed for the \"ProDoctors\" platform. This app allows users to search for medical specialists, manage appointments, and access healthcare information. I was responsible for building the mobile application to provide a smooth and intuitive user experience. The app integrates with the existing ProDoctors database and provides real-time appointment availability.",
+      "impact": "Easy access to healthcare specialists",
+      "features": [
+        "Search and filter medical specialists",
+        "Online appointment booking",
+        "Appointment reminders and notifications",
+        "Medical records access",
+        "Integration with ProDoctors platform"
+      ]
+    },
+    "rentout": {
+      "title": "RentOut",
+      "fullDescription": "A versatile property rental platform catering to both short-term and long-term housing needs.",
+      "detailedDescription": "RentOut is a versatile property rental platform catering to both short-term and long-term housing needs. I built the mobile front-end with Flutter and integrated it with a Laravel backend, creating a robust marketplace for property owners and seekers to connect efficiently. The platform supports advanced search filters, virtual tours, and secure booking.",
+      "impact": "Efficient property marketplace",
+      "features": [
+        "Advanced property search with filters",
+        "Short-term and long-term rental options",
+        "Virtual property tours",
+        "Secure booking and payment",
+        "Direct messaging between owners and renters"
+      ]
+    },
+    "aquarius": {
+      "title": "Aquarius (Vodoley)",
+      "fullDescription": "An on-demand delivery application specifically for the bottled water market in Yakutsk.",
+      "detailedDescription": "Aquarius (Vodoley) is an on-demand delivery application specifically for the bottled water market in Yakutsk. The app simplifies the process of ordering and scheduling regular water deliveries. I developed the full-stack solution, from the mobile interface to the order management system on the backend. The app supports subscription-based deliveries and real-time order tracking.",
+      "impact": "Simplified water delivery scheduling",
+      "features": [
+        "Easy water ordering interface",
+        "Subscription-based delivery scheduling",
+        "Real-time order tracking",
+        "Multiple payment options",
+        "Delivery history and reorder"
+      ]
+    },
+    "virtueforge": {
+      "title": "VirtueForge",
+      "fullDescription": "A local-first Stoicism practice app: daily focus, journal, and Franklin-style virtue tracking.",
+      "detailedDescription": "VirtueForge helps build character habits with Stoic pillars and Benjamin Franklin’s 13 virtues. The Flutter client keeps the journal on-device; a NestJS content API serves quotes and essays (Portico / Temple). I own the mobile product, Content Studio admin, and production API.",
+      "impact": "Practical philosophy without leaving the device",
+      "features": [
+        "On-device journal and virtue grid",
+        "Daily quote and essay library (EN/RU)",
+        "Content Studio for editorial workflow",
+        "iOS and Android clients",
+        "Privacy-first: no analytics SDK in the core loop"
+      ]
+    },
+    "vpn": {
+      "title": "GoodWin VPN",
+      "fullDescription": "Open-source local VPN client: import your own server config, system VPN on Android and iOS.",
+      "detailedDescription": "GoodWin VPN is a Flutter client for configurations you already have (share link, QR, HTTPS subscription). Connect starts a system VPN tunnel. Supports Xray, Hysteria 2, and TrustTunnel. No Goodwin-operated proxy in the store listing — the app is a client, not a VPN service marketplace.",
+      "impact": "Your node, your config, system VPN",
+      "features": [
+        "Import via link, QR, or subscription URL",
+        "System VPN on Android and iOS",
+        "On-device encrypted profile storage",
+        "Open-source client repository",
+        "EN/RU UI and public privacy policy"
+      ]
+    }
+  },
+  "meta": {
+    "homeTitle": "goodwin - Alex Galitsky - Full-stack Developer",
+    "homeDescription": "Full-stack Developer focused on building reliable digital systems",
+    "aboutTitle": "About | goodwin - Alex Galitsky",
+    "workTitle": "Work | goodwin - Alex Galitsky",
+    "contactTitle": "Contact | goodwin - Alex Galitsky",
+    "resumeTitle": "Resume | goodwin - Alex Galitsky"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Flutter Developer & Full-stack Engineer",
+    "download": {
+      "label": "Download CV",
+      "formats": {
+        "pdf": "PDF",
+        "doc": "DOC",
+        "rtf": "RTF",
+        "mhtml": "MHTML"
+      }
+    },
+    "print": {
+      "label": "Print CV"
+    },
+    "contactInfo": {
+      "location": "Krasnodar, Russia",
+      "citizenship": "Russia, work permit available",
+      "relocation": "Open to relocation: Moscow, rare business trips",
+      "phone": "+7 (928) 2336631",
+      "phoneNote": "preferred contact method",
+      "email": "alex.galitsky.kd{'@'}gmail.com",
+      "telegram": "{'@'}goodwin_dot_website"
+    },
+    "desiredPosition": {
+      "title": "Desired Position and Salary",
+      "position": "Flutter developer",
+      "specialization": "Programmer, Developer",
+      "employmentType": "Full-time, Part-time, Project/Freelance",
+      "workFormat": "On-site",
+      "travelTime": "No preference"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "total": "15 years 1 month",
+      "rentout": {
+        "company": "RentOut Technologies",
+        "location": "Yakutsk, rentout.one",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": [
+          "Internet company (search engines, payment systems, social networks, informational and entertainment resources, website promotion, etc.)",
+          "Software Development"
+        ],
+        "period": "December 2023 — Present (2 years 3 months)",
+        "position": "Fullstack Developer",
+        "achievements": [
+          "Managed a team of 6, created and launched a product (server-side and mobile application)",
+          "Created a product development roadmap (technical part)",
+          "Equipped the project with modern solutions for further development"
+        ],
+        "responsibilities": [
+          "Architecture planning",
+          "Server-side development and maintenance",
+          "Mobile application development",
+          "DevOps and CI/CD",
+          "Technical documentation",
+          "Technology stack selection for the project",
+          "Team formation",
+          "Code review",
+          "Developer selection and oversight",
+          "Development process optimization",
+          "Knowledge sharing among team members",
+          "Brainstorming",
+          "Reporting to the client on project stages and issues encountered"
+        ]
+      },
+      "medtochka": {
+        "company": "ProDoctorov - MedTochka",
+        "location": "Krasnodar, prodoctorov.ru/",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": [
+          "Internet company (search engines, payment systems, social networks, informational and entertainment resources, website promotion, etc.)"
+        ],
+        "period": "November 2022 — October 2023 (1 year)",
+        "position": "Flutter Developer",
+        "achievements": [
+          "Implemented local database in mobile application",
+          "Developed telemedicine services module",
+          "Integrated automated tests, improving product quality"
+        ],
+        "responsibilities": [
+          "Mobile development for Android/iOS using Flutter/Dart",
+          "Technical documentation",
+          "Technology stack selection for the project",
+          "Architecture development",
+          "Code review",
+          "Development process optimization",
+          "Knowledge sharing among team members",
+          "Brainstorming"
+        ],
+        "note": "Application successfully launched and available on App Store and Google Play"
+      },
+      "m101": {
+        "company": "M101",
+        "location": "France, m101.fr/",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": [
+          "Software Development",
+          "System Integration, Business Process Automation, IT Consulting"
+        ],
+        "period": "July 2020 — October 2021 (1 year 4 months)",
+        "position": "Fullstack Developer",
+        "achievements": [
+          "Migrated from React Native to Flutter",
+          "Updated server-side dependencies to latest versions",
+          "Implemented new transfer type from train stations (previously only airports)"
+        ],
+        "responsibilities": [
+          "Mobile development for Android/iOS using Flutter/Dart",
+          "Technical documentation",
+          "Technology stack selection for the project",
+          "Team formation",
+          "Architecture development",
+          "Code review",
+          "Developer selection and oversight",
+          "Development process optimization",
+          "Production server deployment",
+          "Knowledge sharing among team members",
+          "Brainstorming",
+          "Reporting to the client on project stages and issues encountered"
+        ],
+        "note": "Application available on App Store and Google Play"
+      },
+      "anthill": {
+        "company": "Anthill",
+        "location": "Sochi, anthill-it.com/",
+        "industry": "Information Technology, System Integration, Internet",
+        "subIndustry": [
+          "System Integration, Business Process Automation, IT Consulting"
+        ],
+        "period": "October 2019 — June 2020 (9 months)",
+        "position": "Fullstack .Net Developer",
+        "achievements": [
+          "Completed several client projects to production launch"
+        ],
+        "responsibilities": [
+          "Project development and support, outsourcing (React.js, .Net Core, MongoDB)",
+          "Microservices development and support: Node.js, MS Azure",
+          "Server-side of WhatsApp communication automation platform in Hong Kong (https://www.wati.io/)"
+        ]
+      },
+      "independent": {
+        "company": "Independent Developer",
+        "location": "Yakutsk",
+        "period": "June 2016 — September 2019 (3 years 4 months)",
+        "position": "Programmer",
+        "responsibilities": [
+          "Website development and support: PHP, .Net Core, MySQL, MSSQL",
+          "Medical Information System development for private clinic (Registration, Medical Records, Appointment Lists, Warehouse, Reports, integration with cash registers Sberbank Atom, terminal Sberbank, integration with medical analyzers via HL7): ObjectPascal/RadStudio, .Net Core, MSSQL"
+        ]
+      },
+      "sakhamedstrakh": {
+        "company": "JSC SMC Sahamedstrakh",
+        "location": "Yakutsk, sakhamedstrakh.ru/",
+        "period": "October 2011 — May 2016 (4 years 8 months)",
+        "position": "Programmer",
+        "achievements": [
+          "Developed 1C configuration for DMS from scratch with insurance reserve calculations and implemented at the enterprise",
+          "Automated and optimized medical registry loading, eliminating manual entry"
+        ],
+        "responsibilities": [
+          "Software development and support for company needs:",
+          "Medical Information System (ObjectPascal, Rad Studio, MSSQL)",
+          "1C Enterprise (Accounting, Insurance Company Management)",
+          "Operator ARM (.Net WinForms, MSSQL)",
+          "Queue Management System (.Net Core, MSSQL)",
+          "Various microservices (Node.js, PHP, .Net Core)",
+          "Windows Server 2012 administration (AD, GPO, VPN, DHCP, DNS, FileStorage, Hyper-V) and MS SQL 2012 DBMS"
+        ]
+      },
+      "meduza": {
+        "company": "Meduza Casino",
+        "location": "Yakutsk",
+        "industry": "Consumer Services",
+        "subIndustry": [
+          "Gaming Business"
+        ],
+        "period": "January 2010 — September 2011 (1 year 9 months)",
+        "position": "Technician-Programmer",
+        "responsibilities": [
+          "Online casino development"
+        ]
+      }
+    },
+    "education": {
+      "title": "Education",
+      "level": "Secondary Specialized",
+      "university": {
+        "name": "North-Eastern Federal University named after M.K. Ammosov, Yakutsk",
+        "year": "2012",
+        "specialty": "Software and Information Systems Developer, Software for Computer Technology and Automated Systems"
+      }
+    },
+    "certifications": {
+      "title": "Professional Development, Courses",
+      "specialist": {
+        "name": "Training Center \"Specialist\" at Bauman Moscow State Technical University",
+        "year": "2014",
+        "description": "JSC SMC Sahamedstrakh, 1C Developer"
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "languages": {
+        "label": "Language Proficiency",
+        "russian": "Russian — Native",
+        "english": "English — B1 — Intermediate"
+      },
+      "technical": {
+        "label": "Technical Skills",
+        "items": [
+          "Git",
+          "SQL",
+          "Linux",
+          "Flutter",
+          "Mobile Dev",
+          "MS Azure",
+          "BLoC",
+          "go_router",
+          "Hive",
+          "SQLite",
+          "Firebase",
+          "Docker",
+          "Gitlab",
+          "Maps (Google, OSM)",
+          "Stripe",
+          "Dart",
+          "AI",
+          "LLM",
+          "Laravel",
+          "TypeScript",
+          "Nest.js",
+          "GraphQL",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "PHP",
+          "REST API",
+          "WebSocket",
+          "ASP.NET",
+          "Team Leading"
+        ]
+      }
+    },
+    "about": {
+      "title": "Additional Information",
+      "contacts": {
+        "telegram": "Telegram - {'@'}goodwin_dot_website",
+        "website": "https://goodwin.website/",
+        "email": "alex.galitsky.kd{'@'}gmail.com",
+        "note": "Please contact via Telegram or email"
+      },
+      "summary": "Was a Fullstack .Net developer, but always wanted to work in mobile development. Have experience developing backend for mobile applications and of course experience in mobile application development on Flutter. Interested in microcontroller programming and robotics. If there's an opportunity to assemble a device independently, I will definitely try to implement it with my own hands (for example, 3D printer or scanner). Recently interested in computer vision and neural networks. Quickly learn new technologies and frameworks when needed. For fun, developed a queue management system (software stack: .Net core, Node.js, MSSQL, ObjectPascal; hardware stack: OrangePi microcomputer, Atmega328 microcontroller). Still works in 4 organizations. Enjoy developing software-hardware complexes, such systems as employee time tracking at enterprises or smart home systems. Unfortunately, these are just hobbies for now. If there's a \"gadget\" that can be connected via COM port or \"solder a couple of wires\", I will definitely connect to it, even if it's a medical analyzer worth millions of rubles. Love soldering as a hobby.",
+      "achievements": [
+        "Successful product launches available on international platforms App Store and Google Play",
+        "Experience managing full application development lifecycle, from concept to release",
+        "Creating unique solutions for process automation in various industries, including medical technologies and logistics"
+      ],
+      "competencies": [
+        "Technologies: Full-stack proficiency for mobile applications and server solutions: .NET, Node.js, PHP/Laravel, Flutter",
+        "Mobile Development: Cross-platform mobile application development for iOS and Android",
+        "Backend Development: Server solutions, REST API, integration with external services and databases",
+        "Project Management: Team collaboration, coordinating all stages from development to application release, managing timelines and quality",
+        "Business Solutions: Developing solutions that solve specific business problems, including process automation, UX/UI improvement, integration with various systems and business process optimization"
+      ]
+    },
+    "recommendations": {
+      "title": "Recommendations",
+      "taxyMatch": {
+        "company": "TaxyMatch",
+        "name": "Jean-Edern Rougagnou",
+        "position": "Chief Executive Officer (CEO)"
+      },
+      "wati": {
+        "company": "WATI",
+        "name": "Ken Yeung",
+        "position": "Chief Executive Officer (CEO)"
+      },
+      "rentout": {
+        "company": "RentOut Technologies LLC",
+        "name": "Fedor Abramov",
+        "position": "Chief Executive Officer (CEO)"
+      }
+    }
+  }
+}

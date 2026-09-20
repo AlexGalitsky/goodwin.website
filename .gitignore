@@ -1,0 +1,29 @@
+# Nuxt
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node
+node_modules/
+logs/
+*.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.fleet
+.idea
+.vscode/
+
+# Private notes (if reintroduced)
+llm-chat.md
+fingerprint.md
+deploy-all.md
